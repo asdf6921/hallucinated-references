@@ -52,61 +52,54 @@ def df_extract_authors(path):
     df.to_csv(path,index=False)
 
 def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
-    log_results = {}
-    log_results["title"] = concept
-    alias = concept.replace(" ", "_").replace(":", "").replace("/", "_")
-
-    logging.basicConfig(
-        filename=LOG_PATH + alias + ".log",
-        filemode='w',
-        level=logging.INFO,
-        format='%(asctime)s %(levelname)s %(message)s',
-        datefmt='%m/%d/%Y %I:%M:%S %p',
-        force=True
-    )
-    logging.info("temperature: " + str(temperature))
-
     dialogs = [prompt(concept)]
-    log_results["generations"] = []
 
     for dialog in dialogs:
-        logging.info("Sending query\n {}".format(dialog))
+        # Retry loop
+        max_retries = 3
+        attempt = 0
+        response = None
 
-        response = generator.chat(
-            model='llama2',  # or whichever model you're using in Ollama
-            messages=dialog,
-            options={
-                "temperature": temperature,
-                "top_p": top_p
-            }
-        )
+        while attempt < max_retries:
+            response = generator.chat(
+                model='llama2',
+                messages=dialog,
+                options={
+                    "temperature": temperature,
+                    "top_p": top_p
+                }
+            )
 
-        result = {
-            'generation': {
-                'role': 'assistant',
-                'content': response['message']['content']
-            }
-        }
+            if response and 'message' in response and response['message']['content'].strip():
+                break
+            else:
+                attempt += 1
 
-        for msg in dialog:
-            logging.info(f"{msg['role'].capitalize()}: {msg['content']}\n")
-        logging.info(
-            f"> {result['generation']['role'].capitalize()}: {result['generation']['content']}")
-        logging.info("\n==================================\n")
+        if not response or 'message' not in response or not response['message']['content'].strip():
+            model_content = "No response generated."
+        else:
+            model_content = response['message']['content']
 
-        generation_record = {
-            "model_answer": result['generation']['content'],
-            "gen_list": extract_answers(result['generation']['content'])
-        }
+    # Now parse the model_content based on newlines
+    lines = model_content.split('\n')
+    cleaned_list = []
 
-        log_results["generations"].append(generation_record)
+    for line in lines:
+        line = line.strip()
+        if line:
+            # Remove leading numbers like "1. ", "<1>. ", etc.
+            line = line.lstrip('0123456789.<> ').strip()
+            # Remove quotes if any
+            if line.startswith('"') and line.endswith('"'):
+                line = line[1:-1]
+            cleaned_list.append(line)
 
-    # Optionally keep a shortcut for the first/main generation
-    if log_results["generations"]:
-        log_results["model_answer_main_query"] = log_results["generations"][0]["model_answer"]
-        log_results["gen_list"] = log_results["generations"][0]["gen_list"]
+    result = {
+        "title": concept,
+        "gen_list": cleaned_list
+    }
 
-    return log_results
+    return result
 
 def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None):
     
@@ -542,27 +535,30 @@ def main_Q(
 
         if (i + 1) % 20 == 0:
             json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-
+    
     json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-    convert_to_csv(write_json_path)
+    # convert_to_csv(write_json_path)
 
 def convert_to_csv(WRITE_JSON_PATH):
-    WRITE_DF_PATH = WRITE_JSON_PATH.replace(".json",".csv")
-    concept_lis = json.load(open(WRITE_JSON_PATH,"r"))
+    WRITE_DF_PATH = WRITE_JSON_PATH.replace(".json", ".csv")
+    concept_lis = json.load(open(WRITE_JSON_PATH, "r"))
     res = []
-    for i,concept in enumerate(concept_lis):
-        for j,gen_title in enumerate(concept["gen_list"]):
-            dict = {}
-            gen_title = process_search_query(gen_title)
-            dict["gen_title"] = gen_title
-            dict["concept"] = concept["title"]
-            dict["model_answer_main_query"] = concept["model_answer_main_query"]            
-            print(i,j,"done")
-            res.append(dict)
+
+    for i, concept in enumerate(concept_lis):
+        for j, gen_title in enumerate(concept["gen_list"]):
+            row = {
+                "gen_title": process_search_query(gen_title),
+                "concept": concept["title"]
+            }
+            print(i, j, "done")
+            res.append(row)
+
     df = pd.DataFrame(res)
-    df.to_csv(WRITE_DF_PATH,index=False)
-    with open(WRITE_JSON_PATH,"w") as f:
-        json.dump(concept_lis,f,indent=2,ensure_ascii=False)
+    df.to_csv(WRITE_DF_PATH, index=False)
+
+    # Re-save the JSON (although concept_lis hasn't changed)
+    with open(WRITE_JSON_PATH, "w") as f:
+        json.dump(concept_lis, f, indent=2, ensure_ascii=False)
 
 def add_bing_return(WRITE_DF_PATH,n_threads=100):
     df = pd.read_csv(WRITE_DF_PATH)
@@ -619,5 +615,5 @@ if __name__ == "__main__":
         write_json_path="output.json",
         log_path="log.txt",
         start_index=0,
-        how_many=10
+        how_many=200
     )
