@@ -26,14 +26,11 @@ def extract_answers(ans,is_pair=False):
     ans_lis = ans.split("\n")
     gen_pubs = []
     for line in ans_lis:
-
-        match_pub = re.search(r'(\d+)\.\s*(?:“|")(.+)(?:"|”)',line)
-        if match_pub:
-            line_new = match_pub.group(2)
+        if re.search(r"\d+\.",line):
+            #print(line)
+            match_pub = re.search(r'(\d+)\.\s*(?:“|")(.+)(?:"|”)',line)
+            line_new = match_pub.group(2) #re.sub(r'\d+.',"",line,count=1)
             gen_pubs.append(line_new)
-        else:
-            # optionally log or just skip
-            continue
     return gen_pubs
 
 
@@ -51,61 +48,49 @@ def df_extract_authors(path):
     df["IQ_ans3"] = df.apply(lambda x : extract_authors_from_ans(x["gen_title"],x["IQ_full_ans3"]),axis=1)
     df.to_csv(path,index=False)
 
-def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
+def reference_query(generator,prompt,concept,max_gen_len,top_p,temperature,LOG_PATH):
     log_results = {}
     log_results["title"] = concept
-    alias = concept.replace(" ", "_").replace(":", "").replace("/", "_")
+    alias = concept.replace(" ","_").replace(":","").replace("/","_")
 
-    logging.basicConfig(
-        filename=LOG_PATH + alias + ".log",
-        filemode='w',
-        level=logging.INFO,
-        format='%(asctime)s %(levelname)s %(message)s',
-        datefmt='%m/%d/%Y %I:%M:%S %p',
-        force=True
-    )
-    logging.info("temperature: " + str(temperature))
+    logging.basicConfig(filename=LOG_PATH + alias + ".log",filemode='w',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',force=True)
+    logging.info("temperature: " + str(temperature)) 
 
     dialogs = [prompt(concept)]
-    log_results["generations"] = []
 
-    for dialog in dialogs:
-        logging.info("Sending query\n {}".format(dialog))
-
-        response = generator.chat(
-            model='llama2',  # or whichever model you're using in Ollama
-            messages=dialog,
-            options={
-                "temperature": temperature,
-                "top_p": top_p
-            }
-        )
-
-        result = {
-            'generation': {
-                'role': 'assistant',
-                'content': response['message']['content']
-            }
+    logging.info("Sending query\n {}".format(dialogs))    
+    
+    response = generator.chat(
+        model='llama2',  # or whichever model you're using in Ollama
+        messages=messages,
+        options={
+            "temperature": temperature,
+            "top_p": top_p
         }
-
+    )
+    
+    # Wrap the response like LLaMA would return
+    results = {
+        'generation': {
+            'role': 'assistant',
+            'content': response['message']['content']
+        }
+    }
+    
+    #there is only one dialog, we are not batching right now
+    for dialog, result in zip(dialogs, results):
         for msg in dialog:
             logging.info(f"{msg['role'].capitalize()}: {msg['content']}\n")
         logging.info(
             f"> {result['generation']['role'].capitalize()}: {result['generation']['content']}")
         logging.info("\n==================================\n")
-
-        generation_record = {
-            "model_answer": result['generation']['content'],
-            "gen_list": extract_answers(result['generation']['content'])
-        }
-
-        log_results["generations"].append(generation_record)
-
-    # Optionally keep a shortcut for the first/main generation
-    if log_results["generations"]:
-        log_results["model_answer_main_query"] = log_results["generations"][0]["model_answer"]
-        log_results["gen_list"] = log_results["generations"][0]["gen_list"]
-
+    
+        #logging.info("Model Answer\n {}".format(ans)) 
+        log_results["model_answer_main_query"] = result['generation']['content']
+        gen_list = extract_answers(result['generation']['content'])
+        log_results["gen_list"] = gen_list
+        logging.info("Extracted Answers\n {}".format(gen_list))  
+    
     return log_results
 
 def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None):
@@ -505,46 +490,49 @@ def main_CC(ckpt_dir: str,
         
 
 def main_Q(
+    ckpt_dir: str,
+    tokenizer_path: str,
     temperature: float = 0.0,
     top_p: float = 0.95,
     max_seq_len: int = 512,
+    max_batch_size: int = 4,
     max_gen_len: Optional[int] = None,
     read_path: str = None,
-    write_json_path: str = None,
-    log_path: str = None,
+    WRITE_JSON_PATH: str = None,
+    LOG_PATH: str = None,
     start_index: int = None,
-    how_many: int = None,  # -1 for all
+    how_many: int = None, #-1 for all
 ):
     assert start_index is not None
     assert how_many is not None
-
-    # No need to build Llama, just use Ollama API in reference_query
-    title_list = open(read_path, "r").readlines()
+    generator = gen.Llama.build(
+            ckpt_dir=ckpt_dir,
+            tokenizer_path=tokenizer_path,
+            max_seq_len=max_seq_len,
+            max_batch_size=max_batch_size)
+        
+    title_list = open(read_path,"r").readlines()
     res = []
-    generator = ollama
-
     if start_index > 0:
         try:
-            res = json.load(open(write_json_path, "r"))
-        except FileNotFoundError:
-            print(f"No file found at {write_json_path}, starting from scratch")
-
+            res = json.load(open(WRITE_JSON_PATH,"r"))
+        except:
+            print("No file found at {}".format(WRITE_JSON_PATH),"starting from scratch")
     counter = 0
-    for i, entry in enumerate(title_list[start_index:]):
+    for i,entry in enumerate(title_list[start_index:]):
         if how_many != -1 and counter >= how_many:
             break
         counter += 1
-
         title = entry.strip()
-        print(f"Processing title: {title} index: {i}")
-        log_results = reference_query(generator, prompt_Q, title, top_p, temperature, log_path)
+        print("Processing title: {} index: {}".format(title,i))
+        log_results = reference_query(generator,prompt_Q,title,max_gen_len,top_p,temperature,LOG_PATH)
         res.append(log_results)
+            #Writing at every 20th iteration in case API crashes
+        if (i+1)%20 == 0:
+            json.dump(res,open(WRITE_JSON_PATH,"w"),indent=2,ensure_ascii=False)
 
-        if (i + 1) % 20 == 0:
-            json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-
-    json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-    convert_to_csv(write_json_path)
+    json.dump(res,open(WRITE_JSON_PATH,"w"),indent=2,ensure_ascii=False)
+    convert_to_csv(WRITE_JSON_PATH)
 
 def convert_to_csv(WRITE_JSON_PATH):
     WRITE_DF_PATH = WRITE_JSON_PATH.replace(".json",".csv")
@@ -563,6 +551,7 @@ def convert_to_csv(WRITE_JSON_PATH):
     df.to_csv(WRITE_DF_PATH,index=False)
     with open(WRITE_JSON_PATH,"w") as f:
         json.dump(concept_lis,f,indent=2,ensure_ascii=False)
+    add_bing_return(WRITE_DF_PATH)
 
 def add_bing_return(WRITE_DF_PATH,n_threads=100):
     df = pd.read_csv(WRITE_DF_PATH)
@@ -577,47 +566,36 @@ def add_bing_return(WRITE_DF_PATH,n_threads=100):
     print(df["bing_return"].value_counts())
 
 
-def main(
-    gen_type: str = None,
+def main(gen_type : str =None,
+         ckpt_dir: str = None,
+    tokenizer_path: str =None,
     temperature: float = 0.0,
     top_p: float = 0.95,
     max_seq_len: int = 512,
+    max_batch_size: int = 1,
     max_gen_len: Optional[int] = None,
     read_path: str = None,
-    write_json_path: str = None,
-    log_path: str = None,
+    WRITE_JSON_PATH: str = None,
+    LOG_PATH: str = None,
     start_index: int = None,
-    num_gen: int = None,
+    num_gen: int =  None,
     how_many: int = None,
-    dq_type: int = None
-):
+    dq_type: int = None):
+
     if gen_type == "Q":
-        main_Q(temperature, top_p, max_seq_len, max_gen_len,
-               read_path, write_json_path, log_path, start_index, how_many)
-
+        main_Q(ckpt_dir,tokenizer_path,temperature,top_p,max_seq_len,max_batch_size,max_gen_len,read_path,WRITE_JSON_PATH,LOG_PATH,start_index,how_many)
     elif gen_type == "IQ":
-        main_IQ(temperature, num_gen, top_p, max_seq_len, max_gen_len,
-                read_path, log_path, start_index, how_many)
+        main_IQ(ckpt_dir,tokenizer_path,temperature,num_gen,top_p,max_seq_len,max_batch_size,max_gen_len,read_path,LOG_PATH,start_index,how_many)
         df_extract_authors(read_path)
-        main_CC(read_path, log_path, start_index, how_many)
-
+        main_CC(ckpt_dir,tokenizer_path,read_path,LOG_PATH,start_index,how_many)
     elif gen_type == "DQ":
-        main_DQ(num_gen, temperature, top_p, max_seq_len, max_gen_len,
-                read_path, log_path, start_index, how_many, dq_type)
+        main_DQ(ckpt_dir,tokenizer_path,num_gen,temperature,top_p,max_seq_len,max_batch_size,max_gen_len,read_path,LOG_PATH,start_index,how_many,dq_type)
         correct_sample_dq(read_path)
+        
         
 
 
 if __name__ == "__main__":
-    main(
-        gen_type="Q",
-        temperature=0.7,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/data/acm_ccs_200.titles",
-        write_json_path="output.json",
-        log_path="log.txt",
-        start_index=0,
-        how_many=10
-    )
+    
+    fire.Fire(main)
+    

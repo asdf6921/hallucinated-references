@@ -1,0 +1,124 @@
+[
+  {
+    "title": "Computer forensics: System forensics",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Computer Forensics: A Guide for Law Enforcement and IT Professionals\"\n2. <2>. \"System Forensics: Examining Computer Systems for Evidence of Crime\"\n3. <3>. \"Digital Forensics and Computing: An Introduction\"\n4. <4>. \"Forensic Analysis of Computer Systems\"\n5. <5>. \"Computer Forensics: A Comprehensive Guide to Digital Forensics\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Computer Forensics: A Guide for Law Enforcement and IT Professionals\"\n2. <2>. \"System Forensics: Examining Computer Systems for Evidence of Crime\"\n3. <3>. \"Digital Forensics and Computing: An Introduction\"\n4. <4>. \"Forensic Analysis of Computer Systems\"\n5. <5>. \"Computer Forensics: A Comprehensive Guide to Digital Forensics\"",
+    "gen_list": []
+  },
+  {
+    "title": "Architectures: Distributed architectures",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Distributed Computing: Fundamentals, Systems, and Applications\"\n2. <2>. \"Designing Distributed Systems\"\n3. <3>. \"The Design of Distributed Systems\"\n4. <4>. \"Principles of Distributed Computing\"\n5. <5>. \"Distributed Systems: Concepts and Design\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Distributed Computing: Fundamentals, Systems, and Applications\"\n2. <2>. \"Designing Distributed Systems\"\n3. <3>. \"The Design of Distributed Systems\"\n4. <4>. \"Principles of Distributed Computing\"\n5. <5>. \"Distributed Systems: Concepts and Design\"",
+    "gen_list": []
+  },
+  {
+    "title": "Continuous mathematics: Topology",
+    "generations": [
+      {
+        "model_answer": "\n1. - 70. \"Topology of Fractals\"\n2. - 85. \"Introduction to Topological Spaces\"\n3. - 100. \"Continuous Mathematics and Its Applications\"\n4. - 110. \"Topology and Geometry\"\n5. - 120. \"Continuum Theory and its Relationship to Mathematics\"",
+        "gen_list": [
+          "Topology of Fractals",
+          "Introduction to Topological Spaces",
+          "Continuous Mathematics and Its Applications",
+          "Topology and Geometry",
+          "Continuum Theory and its Relationship to Mathematics"
+        ]
+      }
+    ],
+    "model_answer_main_query": "\n1. - 70. \"Topology of Fractals\"\n2. - 85. \"Introduction to Topological Spaces\"\n3. - 100. \"Continuous Mathematics and Its Applications\"\n4. - 110. \"Topology and Geometry\"\n5. - 120. \"Continuum Theory and its Relationship to Mathematics\"",
+    "gen_list": [
+      "Topology of Fractals",
+      "Introduction to Topological Spaces",
+      "Continuous Mathematics and Its Applications",
+      "Topology and Geometry",
+      "Continuum Theory and its Relationship to Mathematics"
+    ]
+  },
+  {
+    "title": "Computational complexity and cryptography: Cryptographic protocols",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Cryptographic Protocols and the Complexity Theory of Computation\" by Yehia S. Ghabra\n2. <2>. \"Computational Complexity and Cryptography: A Unified Framework\" by Amit S. Raju\n3. <3>. \"Cryptography and Computational Complexity\" by Alex Biryukov and Shafi Goldwasser\n4. <4>. \"Computational Complexity in Cryptography\" by Adi Shamir\n5. <5>. \"Cryptographic Protocols: A Survey of the State of the Art\" by Peter Schwabe",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Cryptographic Protocols and the Complexity Theory of Computation\" by Yehia S. Ghabra\n2. <2>. \"Computational Complexity and Cryptography: A Unified Framework\" by Amit S. Raju\n3. <3>. \"Cryptography and Computational Complexity\" by Alex Biryukov and Shafi Goldwasser\n4. <4>. \"Computational Complexity in Cryptography\" by Adi Shamir\n5. <5>. \"Cryptographic Protocols: A Survey of the State of the Art\" by Peter Schwabe",
+    "gen_list": []
+  },
+  {
+    "title": "Software organization and properties: Contextual software domains",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Contextual Software Domains: A Framework for Understanding Software Organization and Properties\"\n2. <2>. \"Software Organization and Properties in Context: A Systematic Review\"\n3. <3>. \"Contextualizing Software Engineering: A Survey of the Field and a Call to Action\"\n4. <4>. \"Software Systems in Context: The Role of Domain Knowledge in Design and Evaluation\"\n5. <5>. \"Understanding Software Organization and Properties in the Context of Real-World Projects\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Contextual Software Domains: A Framework for Understanding Software Organization and Properties\"\n2. <2>. \"Software Organization and Properties in Context: A Systematic Review\"\n3. <3>. \"Contextualizing Software Engineering: A Survey of the Field and a Call to Action\"\n4. <4>. \"Software Systems in Context: The Role of Domain Knowledge in Design and Evaluation\"\n5. <5>. \"Understanding Software Organization and Properties in the Context of Real-World Projects\"",
+    "gen_list": []
+  },
+  {
+    "title": "Hardware validation: Physical verification",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"A Framework for Hardware Validation and Verification\"\n2. <2>. \"Hardware Validation: A Comprehensive Review\"\n3. <3>. \"Physical Verification of Digital Circuits\"\n4. <4>. \"Hardware Validation Techniques and Tools\"\n5. <5>. \"A Survey on Hardware Validation and Testing Methodologies\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"A Framework for Hardware Validation and Verification\"\n2. <2>. \"Hardware Validation: A Comprehensive Review\"\n3. <3>. \"Physical Verification of Digital Circuits\"\n4. <4>. \"Hardware Validation Techniques and Tools\"\n5. <5>. \"A Survey on Hardware Validation and Testing Methodologies\"",
+    "gen_list": []
+  },
+  {
+    "title": "Operations research: Forecasting",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Forecasting Methods in Operations Research\"\n2. <2>. \"A Survey of Operations Research Techniques for Forecasting\"\n3. <3>. \"Advances in Operations Research: Forecasting and Predictive Analytics\"\n4. <4>. \"Operations Research Approaches to Forecasting: A Review\"\n5. <5>. \"Forecasting in Supply Chain Management: A Review of the Literature\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Forecasting Methods in Operations Research\"\n2. <2>. \"A Survey of Operations Research Techniques for Forecasting\"\n3. <3>. \"Advances in Operations Research: Forecasting and Predictive Analytics\"\n4. <4>. \"Operations Research Approaches to Forecasting: A Review\"\n5. <5>. \"Forecasting in Supply Chain Management: A Review of the Literature\"",
+    "gen_list": []
+  },
+  {
+    "title": "Symbolic and algebraic manipulation: Symbolic and algebraic algorithms",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"A Survey of Symbolic and Algebraic Manipulation Techniques\"\n2. <2>. \"Symbolic and Algebraic Methods in Computer Science\"\n3. <3>. \"Handbook of Symbolic and Algebraic Computation\"\n4. <4>. \"Algebraic Manipulation of Mathematical Expressions\"\n5. <5>. \"Symbolic and Algebraic Algorithms for Solving Diophantine Equations\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"A Survey of Symbolic and Algebraic Manipulation Techniques\"\n2. <2>. \"Symbolic and Algebraic Methods in Computer Science\"\n3. <3>. \"Handbook of Symbolic and Algebraic Computation\"\n4. <4>. \"Algebraic Manipulation of Mathematical Expressions\"\n5. <5>. \"Symbolic and Algebraic Algorithms for Solving Diophantine Equations\"",
+    "gen_list": []
+  },
+  {
+    "title": "Power and energy: Power estimation and optimization",
+    "generations": [
+      {
+        "model_answer": "\n1. <207>. \"A Survey on Power Estimation and Optimization in Wireless Sensor Networks\"\n2. <289>. \"Power Management for Wireless Sensor Networks: A Survey\"\n3. <347>. \"Optimal Power Allocation for Energy-Efficient Wireless Sensor Networks\"\n4. <405>. \"A Comparative Study of Power Estimation Techniques in Wireless Sensor Networks\"\n5. <461>. \"Power Optimization in Wireless Sensor Networks: A Review and Future Directions\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <207>. \"A Survey on Power Estimation and Optimization in Wireless Sensor Networks\"\n2. <289>. \"Power Management for Wireless Sensor Networks: A Survey\"\n3. <347>. \"Optimal Power Allocation for Energy-Efficient Wireless Sensor Networks\"\n4. <405>. \"A Comparative Study of Power Estimation Techniques in Wireless Sensor Networks\"\n5. <461>. \"Power Optimization in Wireless Sensor Networks: A Review and Future Directions\"",
+    "gen_list": []
+  },
+  {
+    "title": "Physical sciences and engineering: Aerospace",
+    "generations": [
+      {
+        "model_answer": "\n1. <1>. \"Aerodynamics of Flight\"\n2. <2>. \"Astrophysics and Space Research\"\n3. <3>. \"Compressible Flow Dynamics\"\n4. <4>. \"Materials Science and Engineering\"\n5. <5>. \"Nuclear Engineering\"",
+        "gen_list": []
+      }
+    ],
+    "model_answer_main_query": "\n1. <1>. \"Aerodynamics of Flight\"\n2. <2>. \"Astrophysics and Space Research\"\n3. <3>. \"Compressible Flow Dynamics\"\n4. <4>. \"Materials Science and Engineering\"\n5. <5>. \"Nuclear Engineering\"",
+    "gen_list": []
+  }
+]
