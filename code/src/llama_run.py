@@ -152,66 +152,38 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
     print(result['generation']['content'],result['yes_prob'].item())
     return result['generation']['content'],result['yes_prob'].item(),result['prob_token']
 
-def DQ_query_sample(generator,prompt,gen_title,max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None,num_gen=None):
+def DQ_query_sample(generator, prompt_fn, gen_title, max_gen_len, top_p, temperature, LOG_PATH=None, i=None, all_ans=None, num_gen=None):
     if i is not None and all_ans is not None:
         assert gen_title in all_ans
-        prompt = prompt(all_ans,(i%5)+1)
+        prompt_text = prompt_fn(all_ans, (i % 5) + 1)
     else:
-        prompt = prompt(gen_title)
-    alias = gen_title.replace(" ","_").replace(":","").replace("/","_")
+        prompt_text = prompt_fn(gen_title)
 
-    logging.basicConfig(filename=LOG_PATH + alias + ".log",filemode='w',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',force=True)
-    logging.info("temperature: " + str(temperature)) 
-
-    dialogs = [prompt]
-
-    logging.info("Sending query\n {}".format(dialogs))    
-    
     model_ans = []
-    for j in range(num_gen):
-        response = generator.chat(
-            model='llama2',  # or whichever model you're using in Ollama
-            messages=messages,
-            options={
-                "temperature": temperature,
-                "top_p": top_p
-            }
-        )
-        
-        # Wrap the response like LLaMA would return
-        results = {
-            'generation': {
-                'role': 'assistant',
-                'content': response['message']['content']
-            }
-        }
-    
-        #there is only one dialog, we are not batching right now
-        for dialog, result in zip(dialogs, results):
-            for msg in dialog:
-                logging.info(f"{msg['role'].capitalize()}: {msg['content']}\n")
-            logging.info(
-                f"> {result['generation']['role'].capitalize()}: {result['generation']['content']}")
-            logging.info("\n==================================\n")
-            #ans = extract_authors_from_ans(result['generation']['content'])
-            ans = result['generation']['content']
-            
-            #logging.info("Extracted Model Answer\n {}".format(ans))
-            model_ans.append(ans)
-    
-    
+    for _ in range(num_gen):
+        try:
+            response = generator.chat(
+                model='llama2',
+                messages=prompt_text,
+                options={
+                    "temperature": temperature,
+                    "top_p": top_p,
+                    "max_tokens": max_gen_len
+                }
+            )
+            assistant_content = response['message']['content']
+            model_ans.append(assistant_content)
+        except Exception as e:
+            model_ans.append(f"ERROR: {str(e)}")
+
+    # Post-process answers
     n_prob = 0
-    ans_lis = []
-    for i in range(num_gen):
-            n_ans =  model_ans[i]
-            logging.info("Received Model response{}\n {}".format(i,n_ans))
-            ans_lis.append(n_ans)
-            if "yes" in n_ans.lower():
-                n_prob = n_prob + 1
-    n_prob = n_prob/num_gen
-    #return ans_lis,n_prob
-        
-    logging.info("Model n_prob\n {}".format(n_prob))
+    for ans in model_ans:
+        if "yes" in ans.lower():
+            n_prob += 1
+
+    n_prob = n_prob / num_gen if num_gen else 0
+
     return model_ans, n_prob
 
 def correct_sample_dq(file_path):
@@ -225,8 +197,8 @@ def correct_sample_dq(file_path):
         n_prob = n_prob/num_gen
         return n_prob
     df["DQ1_prob_sample"] = df["DQ1_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
-    df["DQ2_prob_sample"] = df["DQ2_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
-    df["DQ3_prob_sample"] = df["DQ3_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
+    # df["DQ2_prob_sample"] = df["DQ2_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
+    # df["DQ3_prob_sample"] = df["DQ3_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
     df.to_csv(file_path,index=False)
     
 def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
@@ -254,13 +226,10 @@ def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
     return model_ans
     
 def main_DQ(
-    ckpt_dir: str,
-    tokenizer_path: str,
     num_gen: int = None,
     temperature: float = 0.0,
     top_p: float = 0.95,
     max_seq_len: int = 512,
-    max_batch_size: int = 4,
     max_gen_len: Optional[int] = None,
     read_path: str = None,
     LOG_PATH: str = None,
@@ -268,17 +237,8 @@ def main_DQ(
     how_many: int = None, #-1 for all
     dq_type: int = None
 ):
-    assert start_index is not None
-    assert how_many is not None
+    generator = ollama
     
-
-    generator = gen.Llama.build(
-            ckpt_dir=ckpt_dir,
-            tokenizer_path=tokenizer_path,
-            max_seq_len=max_seq_len,
-            max_batch_size=max_batch_size)
-    
-    os.makedirs(LOG_PATH, exist_ok=True)  
     df = pd.read_csv(read_path)
     suffix = ""
     if num_gen is not None:
@@ -308,16 +268,16 @@ def main_DQ(
         
         if num_gen is None:
             if dq_type == 1 or dq_type == 2:
-                ans,prob,prob_token = direct_query(generator,prompt,row["gen_title"],max_gen_len,top_p,temperature,LOG_PATH)
+                ans,prob,prob_token = direct_query(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH)
             
             if dq_type == 3:
-                ans,prob,prob_token = direct_query(generator,prompt,row["gen_title"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"])
+                ans,prob,prob_token = direct_query(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"])
         
         else:
             if dq_type == 1 or dq_type == 2:
-                ans,prob = DQ_query_sample(generator,prompt,row["gen_title"],max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None,num_gen=num_gen)
+                ans,prob = DQ_query_sample(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None,num_gen=num_gen)
             if dq_type == 3:
-                ans,prob = DQ_query_sample(generator,prompt,row["gen_title"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"],num_gen=num_gen)
+                ans,prob = DQ_query_sample(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"],num_gen=num_gen)
             
             
         df.loc[i,verbose_ans] = str(ans)
@@ -569,7 +529,7 @@ def main(
 
 if __name__ == "__main__":
     main(
-        gen_type="IQ",
+        gen_type="DQ",
         temperature=0.7,
         top_p=0.9,
         max_seq_len=512,
@@ -578,7 +538,8 @@ if __name__ == "__main__":
         write_json_path="output.json",
         log_path="logs/log.txt",
         start_index=0,
-        num_gen=3,
-        how_many=-1
+        num_gen=10,
+        how_many=-1,
+        dq_type=1
     )
     
