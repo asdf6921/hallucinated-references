@@ -12,6 +12,7 @@ import pandas as pd
 import logging
 import numpy as np
 import re
+import csv
 import multiprocessing
 from prompts import *
 import time
@@ -37,19 +38,22 @@ def extract_answers(ans,is_pair=False):
     return gen_pubs
 
 
-def extract_authors_from_ans(title,ans):
-    ans_lis = ans.split("\n")
-    authors = None
-    authors = ans.replace(title,"provided reference").replace("AUTHORS:","")
-   
+def extract_authors_from_ans(title, ans):
+    if pd.isna(ans) or ans == "" or ans == "None" or ans == "nan":
+        return None
+    ans = str(ans)
+    authors = ans.replace(title, "provided reference").replace("AUTHORS:", "")
     return authors
 
-def df_extract_authors(path):
-    df = pd.read_csv(path)
-    df["IQ_ans1"] = df.apply(lambda x : extract_authors_from_ans(x["gen_title"],x["IQ_full_ans1"]),axis=1)
-    df["IQ_ans2"] = df.apply(lambda x : extract_authors_from_ans(x["gen_title"],x["IQ_full_ans2"]),axis=1)
-    df["IQ_ans3"] = df.apply(lambda x : extract_authors_from_ans(x["gen_title"],x["IQ_full_ans3"]),axis=1)
-    df.to_csv(path,index=False)
+def df_extract_authors(read_path):
+    df = pd.read_csv(read_path)
+    for i in range(1, 4):
+        full_ans_col = f"IQ_full_ans{i}"
+        ans_col = f"IQ_ans{i}"
+        if full_ans_col in df.columns:
+            df[ans_col] = df.apply(lambda x: 
+                                   extract_authors_from_ans(x["generated_reference"], x[full_ans_col]), axis=1)
+    df.to_csv(read_path, index=False)
 
 def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
     dialogs = [prompt(concept)]
@@ -225,52 +229,30 @@ def correct_sample_dq(file_path):
     df["DQ3_prob_sample"] = df["DQ3_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
     df.to_csv(file_path,index=False)
     
-def IQ_query(generator,prompt,num_gen,gen_title,max_gen_len,top_p,temperature,LOG_PATH):
-    alias = gen_title.replace(" ","_").replace(":","").replace("/","_")
+def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
+    alias = gen_title.replace(" ", "_").replace(":", "").replace("/", "_")
 
-    logging.basicConfig(filename=LOG_PATH + alias + ".log",filemode='w',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',force=True)
-    logging.info("temperature: " + str(temperature)) 
+    # Construct the question based on the provided format
+    question = f"Who were the authors of the reference {gen_title}? Please, list only the author names, formatted as - AUTHORS: <firstname> <lastname>, separated by commas. Do not mention the reference in the answer."
 
-    dialogs = [prompt(gen_title)]
-
-    logging.info("Sending query\n {}".format(dialogs))    
-    
     model_ans = []
     for j in range(num_gen):
+        # Generating the response using the Ollama API (or other model as per your use case)
         response = generator.chat(
             model='llama2',  # or whichever model you're using in Ollama
-            messages=messages,
+            messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
                 "top_p": top_p
             }
         )
-        
-        # Wrap the response like LLaMA would return
-        results = {
-            'generation': {
-                'role': 'assistant',
-                'content': response['message']['content']
-            }
-        }
-    
-        #there is only one dialog, we are not batching right now
-        for dialog, result in zip(dialogs, results):
-            for msg in dialog:
-                logging.info(f"{msg['role'].capitalize()}: {msg['content']}\n")
-            logging.info(
-                f"> {result['generation']['role'].capitalize()}: {result['generation']['content']}")
-            logging.info("\n==================================\n")
-            #ans = extract_authors_from_ans(result['generation']['content'])
-            ans = result['generation']['content']
-            #logging.info("Extracted Model Answer\n {}".format(ans))
-            model_ans.append(ans)
-        
-    logging.info("Model Answer\n {}".format(model_ans))
-    return model_ans
-        
- 
 
+        # Extract the response content and add it to the list of answers
+        ans = response['message']['content']
+        model_ans.append(ans)
+
+    return model_ans
+    
 def main_DQ(
     ckpt_dir: str,
     tokenizer_path: str,
@@ -350,44 +332,47 @@ def main_DQ(
     df.to_csv(read_path,index=False)
 
 def main_IQ(
-    ckpt_dir: str,
-    tokenizer_path: str,
     temperature: float = 0.0,
     num_gen: int = 1,
     top_p: float = 0.95,
     max_seq_len: int = 512,
-    max_batch_size: int = 4,
     max_gen_len: Optional[int] = None,
     read_path: str = None,
     LOG_PATH: str = None,
     start_index: int = None,
-    how_many: int = None, #-1 for all
+    how_many: int = None,  # -1 for all
 ):
     assert start_index is not None
     assert how_many is not None
+
+    generator = ollama
     
-    generator = ollama.Client()
-    
-    os.makedirs(LOG_PATH, exist_ok=True)  
     df = pd.read_csv(read_path)
-    
+
     counter = 0
-    for i,row in df.iterrows():
+    for i, row in df.iterrows():
         if i < start_index:
             continue
         if how_many != -1 and counter >= how_many:
             break
         counter += 1
-        #(generator,prompt,num_gen,gen_title,max_gen_len,top_p,temperature,LOG_PATH)
-        res = IQ_query(generator,prompt_IQ,num_gen,row["gen_title"],max_gen_len,top_p,temperature,LOG_PATH)       
-        for j in range(num_gen):    
-            df.loc[i,"IQ_full_ans{}".format(j+1)] = res[j]
-        
-        print(i,"done in method")
+
+        res = IQ_query(generator, num_gen, row["generated_reference"], top_p, temperature, LOG_PATH)
+
+        for j in range(num_gen):
+            if res[j] is not None:
+                # swap \n with <br> here
+                processed_text = res[j].replace('\n', '<br>')  
+                df.loc[i, f"IQ_full_ans{j+1}"] = processed_text
+            else:
+                df.loc[i, f"IQ_full_ans{j+1}"] = ""
+
+        print(i, "done in method")
         if i % 20 == 0:
-            df.to_csv(read_path,index=False)
-            print(i,"saved")
-    df.to_csv(read_path,index=False)
+            df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
+            print(i, "saved")
+    
+    df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
  
 def get_agreement_frac(s: str):
     "Extract agreement percentage from string and return it as a float between 0 and 1"
@@ -404,27 +389,22 @@ def get_agreement_frac(s: str):
     return min(float(m.group(0)) / 100.0, 1.0) 
  
 def consistency_check_pair(list1,list2,generator):
-    
     PROMPT = """Below are what should be two lists of authors. On a scale of 0-100%, how much overlap is there in the author names (ignore minor variations such as middle initials or accents)? Answer with a number between 0 and 100. Also, provide a justification. Note: if either of them is not a list of authors, output 0. Output format should be ANS: <ans> JUSTIFICATION: <justification>.
     
     1. <NAME_LIST1>
     2. <NAME_LIST2>"""
     
-    list1 = str(list1).strip().replace("\n", " ")
-    list2 = str(list2).strip().replace("\n", " ")
+    list1 = str(list1).strip().replace("<br>", " ")
+    list2 = str(list2).strip().replace("<br>", " ")
     prompt = PROMPT.replace("<NAME_LIST1>", list1).replace("<NAME_LIST2>", list2)
-    messages = [[{"role": "user", "content": prompt}]]
-    #print("messages", messages)
-    
     response = generator.chat(
         model='llama2',  # or whichever model you're using in Ollama
-        messages=messages,
+        messages=[{"role": "user", "content": prompt}],
         options={
-            "temperature": temperature,
-            "top_p": top_p
-        }
+                    "temperature": 0.0,
+                    "top_p": 0.95
+                }
     )
-    
     # Wrap the response like LLaMA would return
     results = {
         'generation': {
@@ -432,7 +412,7 @@ def consistency_check_pair(list1,list2,generator):
             'content': response['message']['content']
         }
     }
-    ans = results[0]["generation"]["content"]
+    ans = results["generation"]["content"]
     return (get_agreement_frac(ans), ans)    
 
 def consistency_check(auth_lists,generator):
@@ -449,52 +429,55 @@ def consistency_check(auth_lists,generator):
             # print("auth_lis2",auth_lists[j])
             # print("frac",frac)
             # print("ans",ans)
-            # print("================")
     mean = sum(fracs)/len(fracs)
-    for a in auth_lists:
-        print(" ",a)
-    print("mean",mean)
-    print()
+    # print(fracs)
+    # print("mean",mean)
+
+    # print("================")
+    # print()
     return mean, records
     
+def main_CC(
+    read_path: str,
+    LOG_PATH: str,
+    start_index: int,
+    how_many: int  # -1 for all
+):
+    generator = ollama
 
-def main_CC(ckpt_dir: str,
-    tokenizer_path: str,
-    read_path: str = None,
-    LOG_PATH: str = None,
-    start_index: int = None,
-    how_many: int = None, #-1 for all
-    ):
-    generator = gen.Llama.build(
-            ckpt_dir=ckpt_dir,
-            tokenizer_path=tokenizer_path,
-            max_seq_len=512,
-            max_batch_size=1)
-    
     start = time.time()
-    log_f = open(LOG_PATH, "a")
+    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+
     df = pd.read_csv(read_path)
     counter = 0
+    log_lines = []
+
     for i, row in df.iterrows():
         if i < start_index:
             continue
         if how_many != -1 and counter >= how_many:
             break
         counter += 1
-        
-        mean, records = consistency_check([df.loc[i, f"IQ_ans{j}"] for j in "123"],generator)      
 
-        log_f.write("title:" + row["gen_title"]+"\n")
-        log_f.write("mean:" + str(mean)+"\n")
-        log_f.write("records:" + str(records)+"\n\n\n")
+        mean, records = consistency_check(
+            [row.get(f"IQ_ans{j}") for j in range(1, 4)],
+            generator
+        )
+
+        log_lines.append(f"title: {row['title']}")
+        log_lines.append(f"mean: {mean}")
+        log_lines.append(f"records: {records}\n")
 
         df.loc[i, "IQ_llama_prob"] = mean
         df.loc[i, "IQ_llama_ans_list"] = str(records)
-    
-    log_f.write(f"\nDone at {time.ctime()}\n\n")
+
+    with open(LOG_PATH, "w") as log_f:
+        for line in log_lines:
+            log_f.write(line + "\n")
+        log_f.write(f"\nDone at {time.ctime()}\n\n")
 
     df.to_csv(read_path, index=False)
-    print(f"Wrote {counter:,} entries to {LOG_PATH} in {time.time() - start:.2f}s")    
+    print(f"Wrote {counter:,} entries to {LOG_PATH} in {time.time() - start:.2f}s")
         
 
 def main_Q(
@@ -539,27 +522,6 @@ def main_Q(
     json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
     # convert_to_csv(write_json_path)
 
-def convert_to_csv(WRITE_JSON_PATH):
-    WRITE_DF_PATH = WRITE_JSON_PATH.replace(".json", ".csv")
-    concept_lis = json.load(open(WRITE_JSON_PATH, "r"))
-    res = []
-
-    for i, concept in enumerate(concept_lis):
-        for j, gen_title in enumerate(concept["gen_list"]):
-            row = {
-                "gen_title": process_search_query(gen_title),
-                "concept": concept["title"]
-            }
-            print(i, j, "done")
-            res.append(row)
-
-    df = pd.DataFrame(res)
-    df.to_csv(WRITE_DF_PATH, index=False)
-
-    # Re-save the JSON (although concept_lis hasn't changed)
-    with open(WRITE_JSON_PATH, "w") as f:
-        json.dump(concept_lis, f, indent=2, ensure_ascii=False)
-
 def add_bing_return(WRITE_DF_PATH,n_threads=100):
     df = pd.read_csv(WRITE_DF_PATH)
     with multiprocessing.Pool(n_threads) as pool:
@@ -594,6 +556,7 @@ def main(
     elif gen_type == "IQ":
         main_IQ(temperature, num_gen, top_p, max_seq_len, max_gen_len,
                 read_path, log_path, start_index, how_many)
+        print("IQ done")
         df_extract_authors(read_path)
         main_CC(read_path, log_path, start_index, how_many)
 
@@ -606,14 +569,16 @@ def main(
 
 if __name__ == "__main__":
     main(
-        gen_type="Q",
+        gen_type="IQ",
         temperature=0.7,
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/data/acm_ccs_200.titles",
+        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/outputQ.csv",
         write_json_path="output.json",
-        log_path="log.txt",
+        log_path="logs/log.txt",
         start_index=0,
-        how_many=200
+        num_gen=3,
+        how_many=-1
     )
+    
