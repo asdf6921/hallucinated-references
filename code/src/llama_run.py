@@ -17,6 +17,7 @@ import multiprocessing
 from prompts import *
 import time
 import ast
+import re
 
 
 def process_search_query(s):
@@ -66,7 +67,7 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
 
         while attempt < max_retries:
             response = generator.chat(
-                model='llama2',
+                model='llama3.2:3b',
                 messages=dialog,
                 options={
                     "temperature": temperature,
@@ -123,7 +124,7 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
     logging.info("Sending query\n {}".format(dialogs))    
     
     response = generator.chat(
-        model='llama2',  # or whichever model you're using in Ollama
+        model='llama3.2:3b',  # or whichever model you're using in Ollama
         messages=messages,
         options={
             "temperature": temperature,
@@ -153,9 +154,8 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
     return result['generation']['content'],result['yes_prob'].item(),result['prob_token']
 
 def DQ_query_sample(generator, prompt_fn, gen_title, max_gen_len, top_p, temperature, LOG_PATH=None, i=None, all_ans=None, num_gen=None):
-    if i is not None and all_ans is not None:
-        assert gen_title in all_ans
-        prompt_text = prompt_fn(all_ans, (i % 5) + 1)
+    if i is not None:
+        prompt_text = prompt_fn(gen_title, (i % 5) + 1)
     else:
         prompt_text = prompt_fn(gen_title)
 
@@ -163,7 +163,7 @@ def DQ_query_sample(generator, prompt_fn, gen_title, max_gen_len, top_p, tempera
     for _ in range(num_gen):
         try:
             response = generator.chat(
-                model='llama2',
+                model='llama3.2:3b',
                 messages=prompt_text,
                 options={
                     "temperature": temperature,
@@ -211,7 +211,7 @@ def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
     for j in range(num_gen):
         # Generating the response using the Ollama API (or other model as per your use case)
         response = generator.chat(
-            model='llama2',  # or whichever model you're using in Ollama
+            model='llama3.2:3b',  # or whichever model you're using in Ollama
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -259,37 +259,66 @@ def main_DQ(
         prob_ans = f"DQ3_prob{suffix}"
         prob_ans_token = "DQ3_prob_token"
     counter = 0
-    for i,row in df.iterrows():
-        if i < start_index:
-            continue
+    i = start_index
+    while i < len(df):
         if how_many != -1 and counter >= how_many:
             break
-        counter += 1
-        
-        if num_gen is None:
+
+        # DQ1 and DQ2 logic untouched
+        if dq_type in [1, 2] or num_gen is None:
+            row = df.iloc[i]
             if dq_type == 1 or dq_type == 2:
-                ans,prob,prob_token = direct_query(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH)
-            
-            if dq_type == 3:
-                ans,prob,prob_token = direct_query(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"])
-        
-        else:
-            if dq_type == 1 or dq_type == 2:
-                ans,prob = DQ_query_sample(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None,num_gen=num_gen)
-            if dq_type == 3:
-                ans,prob = DQ_query_sample(generator,prompt,row["generated_reference"],max_gen_len,top_p,temperature,LOG_PATH,i,row["model_answer_main_query"],num_gen=num_gen)
-            
-            
-        df.loc[i,verbose_ans] = str(ans)
-        df.loc[i,prob_ans] = prob
-        if num_gen is None:
-            df.loc[i,prob_ans_token] = prob_token
-        
-        print(i,"done in method", dq_type)
-        if i % 20 == 0:
-            df.to_csv(read_path,index=False)
-            print(i,"saved")
-    df.to_csv(read_path,index=False)
+                if num_gen is None:
+                    ans, prob, prob_token = direct_query(generator, prompt, row["generated_reference"], max_gen_len, top_p, temperature, LOG_PATH)
+                else:
+                    ans, prob = DQ_query_sample(generator, prompt, row["generated_reference"], max_gen_len, top_p, temperature, LOG_PATH, i=None, all_ans=None, num_gen=num_gen)
+            elif dq_type == 3:
+                if num_gen is None:
+                    ans, prob, prob_token = direct_query(generator, prompt, row["generated_reference"], max_gen_len, top_p, temperature, LOG_PATH, i, row["model_answer_main_query"])
+                else:
+                    # DQ3 with sampling is handled below
+                    pass
+
+            if dq_type != 3 or num_gen is None:
+                df.loc[i, verbose_ans] = str(ans)
+                df.loc[i, prob_ans] = prob
+                if num_gen is None:
+                    df.loc[i, prob_ans_token] = prob_token
+
+                print(i, "done in method", dq_type)
+                if i % 20 == 0:
+                    df.to_csv(read_path, index=False)
+                    print(i, "saved")
+
+                i += 1
+                counter += 1
+                continue
+
+        # --- New logic for DQ3 with sampling (group of 5 rows) ---
+        if dq_type == 3 and num_gen is not None:
+            titles = []
+            indices = []
+            for j in range(5):
+                if i + j < len(df):
+                    titles.append(df.iloc[i + j]["generated_reference"])
+                    indices.append(i + j)
+
+            combined_title = " \n ".join(titles)
+            ans, prob = DQ_query_sample(generator, prompt, combined_title, max_gen_len, top_p, temperature, LOG_PATH, i=i, all_ans=None, num_gen=num_gen)
+
+            for idx in indices:
+                df.loc[idx, verbose_ans] = str(ans)
+                df.loc[idx, prob_ans] = prob
+
+            print(f"{i}-{i+len(indices)-1} done in DQ3 sample group")
+            if i % 20 == 0:
+                df.to_csv(read_path, index=False)
+                print(i, "saved")
+
+            i += 5
+            counter += 1
+
+    df.to_csv(read_path, index=False)
 
 def main_IQ(
     temperature: float = 0.0,
@@ -323,6 +352,7 @@ def main_IQ(
             if res[j] is not None:
                 # swap \n with <br> here
                 processed_text = res[j].replace('\n', '<br>')  
+                processed_text = re.sub(r"<think>.*?</think>", "", processed_text, flags=re.DOTALL).strip()
                 df.loc[i, f"IQ_full_ans{j+1}"] = processed_text
             else:
                 df.loc[i, f"IQ_full_ans{j+1}"] = ""
@@ -358,7 +388,7 @@ def consistency_check_pair(list1,list2,generator):
     list2 = str(list2).strip().replace("<br>", " ")
     prompt = PROMPT.replace("<NAME_LIST1>", list1).replace("<NAME_LIST2>", list2)
     response = generator.chat(
-        model='llama2',  # or whichever model you're using in Ollama
+        model='llama3.2:3b',  # or whichever model you're using in Ollama
         messages=[{"role": "user", "content": prompt}],
         options={
                     "temperature": 0.0,
@@ -454,7 +484,6 @@ def main_Q(
     assert start_index is not None
     assert how_many is not None
 
-    # No need to build Llama, just use Ollama API in reference_query
     title_list = open(read_path, "r").readlines()
     res = []
     generator = ollama
@@ -474,13 +503,17 @@ def main_Q(
         title = entry.strip()
         print(f"Processing title: {title} index: {i}")
         log_results = reference_query(generator, prompt_Q, title, top_p, temperature, log_path)
+
+        # Keep only the last 5 items in gen_list
+        if "gen_list" in log_results and len(log_results["gen_list"]) > 5:
+            log_results["gen_list"] = log_results["gen_list"][-5:]
+
         res.append(log_results)
 
         if (i + 1) % 20 == 0:
             json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-    
+
     json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
-    # convert_to_csv(write_json_path)
 
 def add_bing_return(WRITE_DF_PATH,n_threads=100):
     df = pd.read_csv(WRITE_DF_PATH)
@@ -528,18 +561,40 @@ def main(
 
 
 if __name__ == "__main__":
+    # main(
+    #     gen_type="Q",
+    #     temperature=0.0,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/acm_ccs_200.titles",
+    #     write_json_path="output.json",
+    #     log_path="log.txt",
+    #     start_index=0,
+    #     how_many=-1
+    # )
+
     main(
-        gen_type="DQ",
+        gen_type="IQ",
         temperature=0.7,
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/outputQ.csv",
-        write_json_path="output.json",
-        log_path="logs/log.txt",
+        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
+        log_path="log.txt",
         start_index=0,
-        num_gen=10,
-        how_many=-1,
-        dq_type=1
+        num_gen=5,  # or however many generations you want
+        how_many=-1
     )
-    
+    # main_DQ(
+    #    num_gen=10,  # or however many generations you want per prompt
+    #    temperature=0.0,
+    #    top_p=0.9,
+    #    max_seq_len=512,
+    #    max_gen_len=200,
+    #    read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",
+    #    LOG_PATH="log.txt",
+    #    start_index=0,
+    #    how_many=-1,
+    #    dq_type=3  # Use 3 for IQ (DQ3)
+    #)

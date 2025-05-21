@@ -1,0 +1,2002 @@
+[
+  {
+    "title": "Computer forensics: System forensics",
+    "gen_list": [
+      "Digital Forensics: An Introduction",
+      "System Forensic Analysis",
+      "Computer Forensics and Digital Evidence",
+      "Forensic Computer Investigation",
+      "Practical Computer Forensics"
+    ]
+  },
+  {
+    "title": "Architectures: Distributed architectures",
+    "gen_list": [
+      "Distributed Systems: Principles and Paradigms",
+      "Designing Data-Intensive Applications",
+      "Cloud Native Patterns: Designing Change-Tolerant Software for Cloud Systems",
+      "Microservices Architecture: A Practical Guide to Building Resilient, Scalable, and Maintainable Software",
+      "Distributed Architectures: Concepts and Case Studies"
+    ]
+  },
+  {
+    "title": "Continuous mathematics: Topology",
+    "gen_list": [
+      "Topology",
+      "Introduction to Topology",
+      "The Elements of Mathematical Reasoning: A Set Theory Approach",
+      "A First Course in Algebraic Topology",
+      "Topological Spaces"
+    ]
+  },
+  {
+    "title": "Computational complexity and cryptography: Cryptographic protocols",
+    "gen_list": [
+      "Introduction to Modern Cryptography",
+      "Cryptography Engineering: Designing Secure Systems",
+      "The Practice of Cryptographic Programming",
+      "Quantum-Resistant Cryptography: Theory and Implementation",
+      "Handbook of Applied Cryptography"
+    ]
+  },
+  {
+    "title": "Software organization and properties: Contextual software domains",
+    "gen_list": [
+      "Context-Aware Software Engineering",
+      "Domain-Specific Modeling for Software Organization",
+      "Properties of Software Systems: A Contextual Approach",
+      "Contextualizing Software Development: A Framework for Organizational Properties",
+      "Software Organization and Its Properties in the Context of Agile Development"
+    ]
+  },
+  {
+    "title": "Hardware validation: Physical verification",
+    "gen_list": [
+      "Physical Verification of Digital Circuits",
+      "Hardware Verification Methodologies and Tools",
+      "Physical Design and Verification of System-on-Chip (SoC)",
+      "Verification and Validation of Hardware Designs",
+      "Physical Verification Techniques for Digital Circuit Design"
+    ]
+  },
+  {
+    "title": "Operations research: Forecasting",
+    "gen_list": [
+      "Forecasting and Time Series Analysis",
+      "Operations Research in Supply Chain Management",
+      "Forecasting for Inventory Management",
+      "Time Series Forecasting with Machine Learning",
+      "A Survey of Operations Research Methods for Demand Forecasting"
+    ]
+  },
+  {
+    "title": "Symbolic and algebraic manipulation: Symbolic and algebraic algorithms",
+    "gen_list": [
+      "Computer Algebra System: Theory and Practice",
+      "Algebraic Manipulation in Computer Science",
+      "Symbolic Computation: A Programmer's Guide",
+      "The Art of Computer Programming, Volume 2: Seminumerical Algorithms",
+      "Computer Algebra: Methods and Applications"
+    ]
+  },
+  {
+    "title": "Power and energy: Power estimation and optimization",
+    "gen_list": [
+      "Optimization of Power Systems Using Evolutionary Algorithms",
+      "A Review on Power Estimation and Optimization Techniques for Renewable Energy Sources",
+      "Power System Reliability Assessment and Optimization Using Machine Learning Methods",
+      "An Overview of Power Estimation and Optimization in Smart Grids",
+      "Power Optimization in Electric Vehicles: A Review of Charging Strategies"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Aerospace",
+    "gen_list": [
+      "Aerodynamics for Engineers",
+      "Introduction to Aerospace Engineering",
+      "Spacecraft Systems Engineering",
+      "Aerospace Propulsion Systems",
+      "Fundamentals of Aerodynamics"
+    ]
+  },
+  {
+    "title": "Computing / technology policy: Intellectual property",
+    "gen_list": [
+      "Intellectual Property and the Global Economy",
+      "The Economics of Software Patents",
+      "Patent Law and Innovation in the Digital Age",
+      "Intellectual Property Policy for the 21st Century",
+      "The Impact of Intellectual Property on Technological Innovation"
+    ]
+  },
+  {
+    "title": "Emerging technologies: Emerging interfaces",
+    "gen_list": [
+      "Haptic Feedback Technology",
+      "Brain-Computer Interfaces (BCIs)",
+      "Virtual Reality (VR) and Augmented Reality (AR)",
+      "Artificial Intelligence (AI)-powered Interfaces",
+      "Neural Interface Technologies"
+    ]
+  },
+  {
+    "title": "Network protocols: Cross-layer protocols",
+    "gen_list": [
+      "Cross-Layer Design for Wireless Networks",
+      "A Survey of Cross-Layer Protocols for Wireless Networks",
+      "Cross-Layer Networking: Architecture, Protocols and Performance",
+      "Cross-Layer Protocol Engineering for Wireless Sensor Networks",
+      "Cross-Layer Communication Protocols for 5G Networks"
+    ]
+  },
+  {
+    "title": "Design and analysis of algorithms: Parameterized complexity and exact algorithms",
+    "gen_list": [
+      "Parameterized Complexity Theory",
+      "Exact Algorithms for Combinatorial Optimization Problems",
+      "Algorithms and Data Structures: An Introduction to Computational Geometry",
+      "Parameterized Algorithms: A Survey of the State of the Art",
+      "Approximation, Randomization, and Combinatorial Optimization: Algorithms and Techniques"
+    ]
+  },
+  {
+    "title": "Network protocols: Network File System (NFS) protocol",
+    "gen_list": [
+      "Understanding and Implementing the Network File System",
+      "Network File System (NFS) Protocol: A Comprehensive Overview",
+      "The NFS Protocol: A Review of Its History, Architecture, and Evolution",
+      "Network File System (NFS) Security Considerations and Best Practices",
+      "Design and Implementation of a High-Performance NFS Server"
+    ]
+  },
+  {
+    "title": "Intrusion/anomaly detection and malware mitigation: Malware and its mitigation",
+    "gen_list": [
+      "A Survey on Intrusion Detection Systems",
+      "Malware Mitigation Techniques for Cloud Computing",
+      "Anomaly Detection in Network Traffic",
+      "Machine Learning for Malware Detection",
+      "Intrusion Detection Systems Using Machine Learning Algorithms"
+    ]
+  },
+  {
+    "title": "Computational complexity and cryptography: Communication complexity",
+    "gen_list": [
+      "Communication Complexity",
+      "The Complexity of Network Information Flow",
+      "Communication Complexity: A Survey",
+      "Information-Discrepancy and Communication Complexity",
+      "Quantum Communication Complexity"
+    ]
+  },
+  {
+    "title": "Network algorithms: Data path algorithms",
+    "gen_list": [
+      "Data-Path Algorithms for Network Optimization",
+      "Fundamentals of Data Path Routing in Networks",
+      "Optimization Techniques for Data Path Algorithms in Telecommunications",
+      "Data Path Algorithms for Network Synchronization and Control",
+      "Survey of Data Path Algorithms for Network Resource Allocation"
+    ]
+  },
+  {
+    "title": "Artificial intelligence: Planning and scheduling",
+    "gen_list": [
+      "Planning for Artificial Intelligence",
+      "Scheduling in Artificial Intelligence: A Review",
+      "Planning and Scheduling in Artificial Intelligence Systems",
+      "Artificial Intelligence Planning: Methods and Applications",
+      "A Survey on Scheduling in Artificial Intelligence"
+    ]
+  },
+  {
+    "title": "Security in hardware: Embedded systems security",
+    "gen_list": [
+      "Secure by Design: Security for Embedded Systems",
+      "Hardware-Based Security for Embedded Systems",
+      "Embedded System Security: A Survey",
+      "Design and Implementation of a Secure Microcontroller",
+      "Security in Embedded Systems: Threats, Countermeasures, and Best Practices"
+    ]
+  },
+  {
+    "title": "Information retrieval: Users and interactive retrieval",
+    "gen_list": [
+      "User Studies in Information Retrieval",
+      "Interactive Search Systems for User Behavior Analysis",
+      "Human-Computer Interaction in Information Retrieval Systems",
+      "Understanding User Behavior in Interactive Search Interfaces",
+      "Evaluating the Effectiveness of Interactive Search Interfaces"
+    ]
+  },
+  {
+    "title": "Computer graphics: Shape modeling",
+    "gen_list": [
+      "Shape Modeling with Meshes",
+      "Geometric Modeling: Fundamentals of Computer-Aided Design",
+      "Computer-Generated Imagery: Principles and Practice",
+      "3D Modeling for Computer Graphics",
+      "Fundamentals of 3D Computer Graphics"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: VLSI system specification and constraints",
+    "gen_list": [
+      "VLSI System Design Methodology",
+      "Design of Digital Systems Using VHDL",
+      "System-on-Chip (SoC) Design: A Modern Approach",
+      "VLSI Design Principles and Practice",
+      "Digital System Design with Verilog HDL"
+    ]
+  },
+  {
+    "title": "Security in hardware: Hardware attacks and countermeasures",
+    "gen_list": [
+      "Hardware Security: Design, Testing, and Verification",
+      "The Art of Hardware Security Design",
+      "Secure Microcontrollers: A Survey",
+      "Physical Attacks on Embedded Systems: Threats and Countermeasures",
+      "Hardware Security Architecture for Trusted Computing"
+    ]
+  },
+  {
+    "title": "Enterprise computing: IT architectures",
+    "gen_list": [
+      "Enterprise Computing: A Guide for IT Professionals",
+      "IT Architecture and Enterprise Computing",
+      "The Enterprise Computer: An Architectural Approach",
+      "Enterprise IT Architecture: A Framework for Success",
+      "Designing Enterprise-Ready IT Systems"
+    ]
+  },
+  {
+    "title": "Dependable and fault-tolerant systems and networks: Processors and memory architectures",
+    "gen_list": [
+      "Fault-Tolerant Systems: Design, Analysis, and Performance Evaluation",
+      "Dependable Computing: Fault Tolerance in High-Performance Computing Systems",
+      "Reliability and Fault Tolerance in Distributed Systems",
+      "Fault-Tolerant Network Architectures for Dependable Communication",
+      "Design and Verification of Fault-Tolerant Processor Architectures"
+    ]
+  },
+  {
+    "title": "Machine learning: Learning paradigms",
+    "gen_list": [
+      "Pattern Recognition and Machine Learning",
+      "Deep Learning",
+      "Learning from Data",
+      "Neural Networks and Deep Learning",
+      "Machine Learning: A Probabilistic Perspective"
+    ]
+  },
+  {
+    "title": "Visualization: Visualization theory, concepts and paradigms",
+    "gen_list": [
+      "The Psychology of Visual Perception",
+      "Visual Thinking: Images, Illusions, and Vision",
+      "Visualization Research: Theory and Practice",
+      "The Art of Seeing: A Guide to Observing Your World",
+      "Visual Perception: A Modern Introduction"
+    ]
+  },
+  {
+    "title": "Software notations and tools: Software libraries and repositories",
+    "gen_list": [
+      "Software Development Methodologies",
+      "The Art of Readable Code",
+      "Software Engineering at Google",
+      "The Open Source Software Movement",
+      "Software Architecture Patterns"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Displays and imagers",
+    "gen_list": [
+      "Display Interfaces for Digital Cameras",
+      "Imaging Sensors and Interfacing Technologies",
+      "Wireless Display Interfaces",
+      "Display and Imager Systems for Mobile Devices",
+      "High-Speed Display Interfaces for Consumer Electronics"
+    ]
+  },
+  {
+    "title": "Logic: Logic and verification",
+    "gen_list": [
+      "Introduction to Model Checking",
+      "Verification of Finite State Machines",
+      "Formal Verification: A Practical Approach",
+      "Automated Reasoning in Logic and Information Theory",
+      "Principles of Formal Verification"
+    ]
+  },
+  {
+    "title": "Information systems applications: Digital libraries and archives",
+    "gen_list": [
+      "Digital Libraries: A Review of the State of the Art",
+      "Designing Digital Archives for Cultural Heritage Institutions",
+      "Building a Digital Library for Rare Books and Manuscripts",
+      "Digital Preservation of Cultural Heritage Materials",
+      "A Framework for Developing Digital Libraries in Developing Countries"
+    ]
+  },
+  {
+    "title": "Operations research: Decision analysis",
+    "gen_list": [
+      "Decision Analysis: An Introduction to Decision Making",
+      "Operations Research: A Practical Approach",
+      "Introduction to Operations Research and Management Science",
+      "Decision Analysis for Operations Research",
+      "Operations Research and Decision Analysis"
+    ]
+  },
+  {
+    "title": "Integrated circuits: Reconfigurable logic and FPGAs",
+    "gen_list": [
+      "Reconfigurable Logic and Applications of Field-Programmable Gate Arrays",
+      "FPGA-Based Reconfigurable Systems: Design, Implementation, and Verification",
+      "Integrated Circuits for Reconfigurable Computing: A Survey",
+      "Field-Programmable Gate Arrays (FPGAs) for Digital Signal Processing",
+      "Reconfigurable Logic and FPGAs: A Handbook"
+    ]
+  },
+  {
+    "title": "Logic: Type theory",
+    "gen_list": [
+      "Introduction to Modern Formal Logic",
+      "Type Theory in Proof Assistants",
+      "The Elements of Linear Logic",
+      "Homotopy Type Theory: Unifying Types, Spaces and Logic",
+      "Types and Programming Languages"
+    ]
+  },
+  {
+    "title": "Integrated circuits: Digital switches",
+    "gen_list": [
+      "Digital Switches in Integrated Circuits",
+      "Switching Circuits for Digital Systems",
+      "Design of Digital Switches and Logic Gates",
+      "Integrated Circuit Design: A Practical Approach to Digital Switches",
+      "Digital Switches and Logic Circuits for Integrated Circuits"
+    ]
+  },
+  {
+    "title": "Cross-computing tools and techniques: Empirical studies",
+    "gen_list": [
+      "A Study on Cross-Computing Tools for Parallelizing Sequential Code",
+      "Empirical Analysis of Cross-Compiling Techniques for Multi-Archipetal Systems",
+      "Cross-Compilation: A Survey of Empirical Studies and Future Directions",
+      "An Empirical Investigation of Cross-Compilation for Embedded Systems",
+      "Cross-Computing Tools and Techniques: An Empirical Study of Performance and Energy Efficiency"
+    ]
+  },
+  {
+    "title": "Data management systems: Database administration",
+    "gen_list": [
+      "Database Systems: The Complete Book",
+      "Principles of Database Systems",
+      "Database Systems: A Practical Approach",
+      "Modern Database Systems: Design, Implementation, and Management",
+      "Database Administration Essentials"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Astronomy",
+    "gen_list": [
+      "The Cosmos",
+      "A Brief History of Time",
+      "Cosmos",
+      "The Universe in a Nutshell",
+      "Death by Black Hole"
+    ]
+  },
+  {
+    "title": "Software creation and management: Collaboration in software development",
+    "gen_list": [
+      "Collaboration Engineering",
+      "The Software Craftsman: Professionalism, Pragmatism, Pride",
+      "Agile Project Management with Scrum",
+      "Team Software Process: A Development Method for Small Teams",
+      "Peopleware: Productive Projects and Teams"
+    ]
+  },
+  {
+    "title": "Ubiquitous and mobile computing: Ubiquitous and mobile computing design and evaluation methods",
+    "gen_list": [
+      "Designing Ubiquitous Systems",
+      "Human-Centered Design for Mobile Applications",
+      "Evaluation of Mobile Applications: A Review",
+      "Design Science Research in Ubiquitous Computing",
+      "Usability Evaluation of Mobile Devices"
+    ]
+  },
+  {
+    "title": "Enterprise computing: IT governance",
+    "gen_list": [
+      "IT Governance: A Guide for IT Leaders",
+      "The IT Governance Handbook",
+      "Governance, Risk and Compliance in IT",
+      "Enterprise IT Governance: A Framework for Success",
+      "IT Governance: Principles and Best Practices"
+    ]
+  },
+  {
+    "title": "Education: E-learning",
+    "gen_list": [
+      "E-Learning in Higher Education",
+      "The Impact of E-Learning on Student Learning Outcomes",
+      "Designing Effective Online Courses for E-Learning",
+      "E-Learning and the Future of Education",
+      "A Review of E-Learning Systems for Educational Institutions"
+    ]
+  },
+  {
+    "title": "Arts and humanities: Sound and music computing",
+    "gen_list": [
+      "The Oxford Handbook of Sound and Music Computing",
+      "Sound and Music Computing: A Practical Guide",
+      "Computing in Musicology: A Guide to Software Tools and Techniques",
+      "Music, Technology, and the Arts",
+      "The Sonic Web: The Art of Sound Design for Interactive Media"
+    ]
+  },
+  {
+    "title": "Concurrent computing methodologies: Concurrent algorithms",
+    "gen_list": [
+      "Introduction to Parallel and Distributed Computing",
+      "Algorithms for Parallel Processing",
+      "The Art of Multiprocessing",
+      "Concurrent Programming: Principles and Practice",
+      "Parallel Algorithms"
+    ]
+  },
+  {
+    "title": "Artificial intelligence: Philosophical/theoretical foundations of artificial intelligence",
+    "gen_list": [
+      "The Singularity Is Near",
+      "Life 3.0: Being Human in the Age of Artificial Intelligence",
+      "Artificial Intelligence: A Modern Approach",
+      "Human Compatible: Art, Emotion, and Work in the Age of AI",
+      "Deep Learning"
+    ]
+  },
+  {
+    "title": "Document types: Surveys and overviews",
+    "gen_list": [
+      "Survey of Survey Methods",
+      "Overviews in Epidemiology",
+      "Surveys in Social Science Research",
+      "The Art of Surveys: Methods, Analysis and Dissemination",
+      "Survey Research Methods"
+    ]
+  },
+  {
+    "title": "Parallel computing methodologies: Parallel algorithms",
+    "gen_list": [
+      "Introduction to Parallel Computing",
+      "Parallel Algorithms for Scientific and Engineering Applications",
+      "Principles of Parallel Programming",
+      "Parallel Computing: Theory, Algorithms, and Applications",
+      "Scalable Parallel Algorithms for Large Data Sets"
+    ]
+  },
+  {
+    "title": "Formal languages and automata theory: Automata extensions",
+    "gen_list": [
+      "Introduction to Automata Theory, Languages, and Computation",
+      "Automata Theory and Its Applications",
+      "Formal Language Theory: An Introduction",
+      "Elements of Computation: Automata, Semantics, and Programming",
+      "Theory of Computation: Automata, Decidability, and Complexity"
+    ]
+  },
+  {
+    "title": "Education: Computer-managed instruction",
+    "gen_list": [
+      "Computer-Based Instruction",
+      "The Effectiveness of Computer-Based Instruction",
+      "Computer Managed Instruction Systems",
+      "Computer-Assisted Instruction: A Review",
+      "The Impact of Computer-Managed Instruction on Student Learning"
+    ]
+  },
+  {
+    "title": "Emerging technologies: Memory and dense storage",
+    "gen_list": [
+      "3D Stacked Memory Technology for Next-Generation Computing Systems",
+      "Phase Change Memory (PCM) for Non-Volatile Memory Applications",
+      "Graphene-Based Memristors for High-Density Storage",
+      "Spin-Transfer Torque Magnetic Recording (STT-MRAM) for Low-Power Memory",
+      "Heterogeneous Integration of 3D Stacked Memories and Logic Circuits"
+    ]
+  },
+  {
+    "title": "Network services: In-network processing",
+    "gen_list": [
+      "In-Network Processing for Big Data Analytics",
+      "A Survey on Network-Processing Paradigms for IoT Applications",
+      "Edge Computing and In-Network Processing for 5G Networks",
+      "In-Network Processing: A New Paradigm for Real-Time Analytics",
+      "Network-Processing for Real-Time Analytics in Edge Computing Environments"
+    ]
+  },
+  {
+    "title": "Software and application security: Social network security and privacy",
+    "gen_list": [
+      "Social Network Security and Privacy",
+      "Secure Social Networking: A Survey of Threats, Countermeasures, and Future Directions",
+      "Privacy in the Age of Social Media",
+      "Security and Privacy on Social Networks",
+      "Threats to Social Network Security and Privacy"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Mathematics and statistics",
+    "gen_list": [
+      "Mathematics for Engineers and Scientists",
+      "Statistics in Plain English",
+      "Engineering Mathematics",
+      "Probability and Statistics for Engineers and Scientists",
+      "Calculus: Early Transcendentals"
+    ]
+  },
+  {
+    "title": "Network services: Naming and addressing",
+    "gen_list": [
+      "DNS and DHCP",
+      "IP Addressing Fundamentals",
+      "TCP/IP Illustrated, Volume 1: The Protocols",
+      "Computer Networks: A Systems Approach",
+      "Internet Protocol (IP) Addressing"
+    ]
+  },
+  {
+    "title": "Enterprise computing: Reference models",
+    "gen_list": [
+      "TOGAF",
+      "Zachman Framework",
+      "ITIL",
+      "Six Sigma",
+      "Open Group Architecture Framework (TOGAF)"
+    ]
+  },
+  {
+    "title": "Dependable and fault-tolerant systems and networks: Secondary storage organization",
+    "gen_list": [
+      "Reliability and Fault Tolerance in Computing Systems",
+      "Fault-Tolerant Data Storage Systems",
+      "Design and Analysis of Reliable Distributed Systems",
+      "Secondary Storage Systems for High Availability",
+      "Fault-Tolerant Networked Storage Systems"
+    ]
+  },
+  {
+    "title": "Mathematical analysis: Numerical analysis",
+    "gen_list": [
+      "Numerical Methods for Scientists and Engineers",
+      "Numerical Analysis",
+      "Introduction to Numerical Analysis",
+      "Numerical Solution of Partial Differential Equations",
+      "Numerical Analysis: An Introduction with Applications"
+    ]
+  },
+  {
+    "title": "Software notations and tools: General programming languages",
+    "gen_list": [
+      "The Elements of Computing Systems",
+      "Introduction to Algorithms",
+      "Computer Organization and Design",
+      "The C Programming Language",
+      "Head First Design Patterns"
+    ]
+  },
+  {
+    "title": "Integrated circuits: Logic circuits",
+    "gen_list": [
+      "Digital Integrated Circuits",
+      "Introduction to Integrated Circuit Design",
+      "Integrated Circuit Design and Analysis",
+      "Fundamentals of Integrated Circuit Technology",
+      "Logic and Arithmetic Circuits in Digital Integrated Circuits"
+    ]
+  },
+  {
+    "title": "Design and analysis of algorithms: Parallel algorithms",
+    "gen_list": [
+      "Introduction to Algorithms",
+      "Algorithms + Data Structures = Programs",
+      "The Algorithm Design Manual",
+      "Parallel Algorithms and Data Structures for Computer Science",
+      "Introduction to Parallel Computing"
+    ]
+  },
+  {
+    "title": "Network security: Security protocols",
+    "gen_list": [
+      "Transport Layer Security (TLS)",
+      "Secure Sockets Layer/Transport Layer Security (SSL/TLS)",
+      "Internet Key Exchange (IKE)",
+      "Secure Shell (SSH)",
+      "Datagram Transport Layer Security (DTLS)"
+    ]
+  },
+  {
+    "title": "Software and application security: Software security engineering",
+    "gen_list": [
+      "Secure Coding: Design and Advice for Developing Secure Software",
+      "The Web Application Hacker's Handbook",
+      "Secure Software Development Lifecycle",
+      "Software Security Engineering: A Guide to Building Secure Systems",
+      "Secure Coding Practices: Guidelines for Writing Secure Code"
+    ]
+  },
+  {
+    "title": "Operations research: Computer-aided manufacturing",
+    "gen_list": [
+      "Computer-Aided Manufacturing Systems",
+      "Manufacturing Systems and Supply Chain Management",
+      "Operations Research in Manufacturing Systems",
+      "Computer-Aided Design and Manufacturing Systems",
+      "Supply Chain Optimization for Manufacturing Operations"
+    ]
+  },
+  {
+    "title": "World Wide Web: Web data description languages",
+    "gen_list": [
+      "Resource Description Framework (RDF)",
+      "Web Ontology Language (OWL)",
+      "Simple Knowledge Organization System (SKOS)",
+      "Dublin Core Metadata Initiative (DCMI)",
+      "Schema.org"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: On-chip resource management",
+    "gen_list": [
+      "On-Chip Resource Management for Very Large Scale Integration",
+      "Design and Optimization of On-Chip Resource Allocation Systems",
+      "Resource Management in Deep Submicron CMOS VLSI Design",
+      "A Survey on On-Chip Resource Management Techniques for VLSI Design",
+      "On-Chip Resource Management for Scalable and Adaptive System-on-Chip Designs"
+    ]
+  },
+  {
+    "title": "Logic: Abstraction",
+    "gen_list": [
+      "Introduction to Mathematical Logic",
+      "Abductive Reasoning: Concepts and Applications",
+      "Formal Methods in Artificial Intelligence",
+      "Logic for Computer Science",
+      "The Elements of Logical Thought"
+    ]
+  },
+  {
+    "title": "Computing / technology policy: Computer crime",
+    "gen_list": [
+      "Computer Crime and Cybercrime: Threats to Business",
+      "The Oxford Handbook of Cybersecurity",
+      "Cybercrime: A Comprehensive Approach",
+      "Computer Crime and Digital Forensics",
+      "Cybercrime Law and Policy"
+    ]
+  },
+  {
+    "title": "Data management systems: Query languages",
+    "gen_list": [
+      "Database System Concepts",
+      "Query Optimization Techniques for Relational Databases",
+      "SQL Queries for Mere Mortals",
+      "The Art of SQL",
+      "Database Systems: The Complete Book"
+    ]
+  },
+  {
+    "title": "Software creation and management: Software post-development issues",
+    "gen_list": [
+      "Post-Development Issues in Software Engineering",
+      "Managing Software Post-Development: A Review of Challenges and Opportunities",
+      "The Impact of Post-Development Issues on Software Maintenance",
+      "Post-Development Support for Software Development Projects",
+      "Challenges and Strategies for Managing Software Post-Development Issues"
+    ]
+  },
+  {
+    "title": "Network properties: Network mobility",
+    "gen_list": [
+      "Mobility Management in Wireless Networks",
+      "A Survey on Mobility Management for Mobile Networks",
+      "Network Mobility and Its Impact on Quality of Service",
+      "Mobility-Aware Network Slicing for 5G Networks",
+      "Analyzing the Effects of Network Mobility on Traffic Engineering"
+    ]
+  },
+  {
+    "title": "Printed circuit boards: Electromagnetic interference and compatibility",
+    "gen_list": [
+      "Electromagnetic Interference on Printed Circuit Boards",
+      "Printed Circuit Board Electromagnetic Compatibility",
+      "EMI/RFI Effects on Printed Circuit Boards",
+      "Design for Electromagnetic Compatibility of Printed Circuit Boards",
+      "Mitigating Electromagnetic Interference on Printed Circuit Boards"
+    ]
+  },
+  {
+    "title": "Computational complexity and cryptography: Quantum complexity theory",
+    "gen_list": [
+      "Introduction to Quantum Complexity Theory",
+      "Quantum Computational Complexity: A Gentle Introduction",
+      "Complexity Theory for Quantum Computation",
+      "Quantum Information and Quantum Computation",
+      "Quantum Complexity: An Introduction"
+    ]
+  },
+  {
+    "title": "Formal languages and automata theory: Grammars and context-free languages",
+    "gen_list": [
+      "Introduction to Automata Theory, Languages, and Computation",
+      "Formal Language Theory: An Introduction",
+      "Automata, Languages, and Programming",
+      "Discrete Mathematics and Its Applications",
+      "Theory of Computation"
+    ]
+  },
+  {
+    "title": "Information systems applications: Enterprise information systems",
+    "gen_list": [
+      "Enterprise Systems and Their Impact on Organizations",
+      "Information Systems Applications in Supply Chain Management",
+      "The Role of Information Systems in Strategic Decision Making",
+      "Enterprise Resource Planning: A Review of the Literature",
+      "Information Systems Applications in Healthcare Organizations"
+    ]
+  },
+  {
+    "title": "Network performance evaluation: Network simulations",
+    "gen_list": [
+      "Simulation-Based Performance Analysis of Wireless Networks",
+      "A Survey on Network Simulation Tools and Techniques",
+      "Performance Evaluation of Network Protocols Using Simulation",
+      "Network Simulator for Evaluating Quality of Service Metrics",
+      "Using Network Simulations to Evaluate the Impact of Traffic Management Policies"
+    ]
+  },
+  {
+    "title": "Logic: Separation logic",
+    "gen_list": [
+      "Separation Logic: A New Form of Linear Logic",
+      "Introduction to Separation Logic",
+      "The Essence of Separation Logic",
+      "A Tutorial on Separation Logic",
+      "Separation Logic for Program Verification"
+    ]
+  },
+  {
+    "title": "Network components: Logical nodes",
+    "gen_list": [
+      "Logical Nodes in Computer Networks",
+      "The Concept of Logical Nodes in Network Architecture",
+      "Understanding Logical Nodes in Network Design",
+      "Logical Node Models for Network Analysis and Optimization",
+      "Logical Nodes in Telecommunication Networks"
+    ]
+  },
+  {
+    "title": "Enterprise computing: Business-IT alignment",
+    "gen_list": [
+      "Aligning IT with Business Objectives",
+      "The Alignment Imperative for Enterprise IT",
+      "Business-IT Alignment in the Digital Age",
+      "From Silos to Synergy: Aligning IT and Business",
+      "Strategic Alignment of Information Technology with Organizational Strategy"
+    ]
+  },
+  {
+    "title": "Robustness: Safety critical systems",
+    "gen_list": [
+      "Reliability and Fault Tolerance in Complex Systems",
+      "Safety-Critical Systems: Design, Analysis, and Verification",
+      "Robustness and Reliability of Control Systems",
+      "Fault-Tolerant Control Systems: Design and Analysis",
+      "Safe and Robust Control of Uncertain Systems"
+    ]
+  },
+  {
+    "title": "Robustness: Fault tolerance",
+    "gen_list": [
+      "Fault-Tolerant Systems: Design and Analysis",
+      "Robustness in Complex Systems: A Review",
+      "Fault Tolerance in Distributed Systems",
+      "Design for Robustness: A Systematic Approach",
+      "Fault-Tolerant Control Systems: Theory, Design, and Applications"
+    ]
+  },
+  {
+    "title": "Electronic design automation: Logic synthesis",
+    "gen_list": [
+      "Logic Synthesis",
+      "Synthesis of Digital Circuits",
+      "The Art of Electronics",
+      "Digital Design and Computer-Aided Design",
+      "VLSI Design: Principles and Practice"
+    ]
+  },
+  {
+    "title": "Education: Computer-assisted instruction",
+    "gen_list": [
+      "Computer-Assisted Instruction: A Review of the Literature",
+      "The Effectiveness of Computer-Based Learning Environments",
+      "Using Computers to Teach Mathematics: A Review of Research",
+      "Computer-Assisted Instruction in Science Education: A Meta-Analysis",
+      "The Impact of Technology on Student Learning Outcomes"
+    ]
+  },
+  {
+    "title": "Logic: Linear logic",
+    "gen_list": [
+      "Linear Logic: A First Course",
+      "Introduction to Linear Logic",
+      "Linear Logic and Its Applications",
+      "A Tutorial on Linear Logic",
+      "Linear Logic: An Introduction"
+    ]
+  },
+  {
+    "title": "Security in hardware: Hardware reverse engineering",
+    "gen_list": [
+      "Reverse-Engineering Secure Microprocessors",
+      "Hardware Reverse Engineering: A Survey of Techniques and Tools",
+      "The Art of Hardware Reverse Engineering",
+      "Reverse-Engineering Secure Embedded Systems",
+      "Hardware Reverse Engineering for Cryptographic Analysis"
+    ]
+  },
+  {
+    "title": "Operations research: Consumer products",
+    "gen_list": [
+      "Optimization of Product Mix in a Consumer Goods Firm",
+      "Consumer Choice and Preference Analysis Using Operations Research Techniques",
+      "Supply Chain Optimization for Consumer Products",
+      "Demand Forecasting and Inventory Management for Consumer Goods Companies",
+      "Using Operations Research to Improve Product Development and Launch Strategies"
+    ]
+  },
+  {
+    "title": "Semantics and reasoning: Program semantics",
+    "gen_list": [
+      "Program Semantics",
+      "The Elements of Style in Programming Language Design",
+      "Semantics and Structure of Programs",
+      "A Model for Semantics of Algorithms",
+      "Foundations of Programming Languages"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Wireless devices",
+    "gen_list": [
+      "Wireless Communication Systems: Principles and Applications",
+      "Mobile Devices and Networks: A Comprehensive Approach",
+      "Computer Networks: Fundamentals, Technology, and Performance",
+      "Wireless Sensor Networks: Theory, Techniques, and Applications",
+      "Embedded Systems: A Modern Approach"
+    ]
+  },
+  {
+    "title": "Randomness, geometry and discrete structures: Random projections and metric embeddings",
+    "gen_list": [
+      "Random Projections in Geometry",
+      "Metric Embeddings of Random Projections",
+      "Random Projections and Low-Dimensional Data Structures",
+      "Geometry and Randomness: A Survey of Recent Advances",
+      "Random Projections for Dimensionality Reduction"
+    ]
+  },
+  {
+    "title": "Network components: End nodes",
+    "gen_list": [
+      "End-to-End Communication in Wireless Networks",
+      "Node and Link Models for Network Analysis",
+      "The Impact of End Nodes on Network Performance",
+      "Designing End Node Architectures for IoT Applications",
+      "Characterizing End Node Behavior in Peer-to-Peer Networks"
+    ]
+  },
+  {
+    "title": "Computing / technology policy: Commerce policy",
+    "gen_list": [
+      "The Digital Economy Act",
+      "Global Information Assurance Act",
+      "Cybersecurity and Infrastructure Security Agency Reauthorization Act",
+      "America Invents Act",
+      "Digital Millennium Copyright Act"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: Design reuse and communication-based design",
+    "gen_list": [
+      "Design Reuse in VLSI Design",
+      "Communication-Based Design for Very Large Scale Integration",
+      "Reusing Designs in Very Large Scale Integration",
+      "Design Reuse and Communication-Based Design for VLSI",
+      "A Survey on Design Reuse Techniques for Very Large Scale Integration"
+    ]
+  },
+  {
+    "title": "Theory and algorithms for application domains: Database theory",
+    "gen_list": [
+      "Database Systems: The Complete Book",
+      "Database Systems: A Practical Approach to Design, Implementation, and Management",
+      "Database Systems: An Introduction to Database Systems in SQL and NoSQL Databases",
+      "Principles of Database Systems",
+      "Database Systems: A Modern Approach"
+    ]
+  },
+  {
+    "title": "Computers in other domains: Personal computers and PC applications",
+    "gen_list": [
+      "Personal Computing: A Very Short Introduction",
+      "The History of Personal Computing",
+      "Personal Computers: An Introduction to the Industry",
+      "Computers in the Home: A History and Guide",
+      "The Impact of Personal Computing on Society"
+    ]
+  },
+  {
+    "title": "Collaborative and social computing: Collaborative and social computing design and evaluation methods",
+    "gen_list": [
+      "Designing Collaborative Systems",
+      "Evaluating Social Computing Systems",
+      "Methodologies for Evaluating Collaborative Technologies",
+      "Social Computing Design and Evaluation",
+      "Assessing the Effectiveness of Collaborative Software"
+    ]
+  },
+  {
+    "title": "Network properties: Network reliability",
+    "gen_list": [
+      "Reliability-Centered Maintenance",
+      "Network Reliability and Its Implications for Telecommunications Systems",
+      "A Survey of Network Reliability Models",
+      "Reliability Analysis in Communication Networks",
+      "Stochastic Processes in Queueing Theory and Reliability Modeling"
+    ]
+  },
+  {
+    "title": "Randomness, geometry and discrete structures: Pseudorandomness and derandomization",
+    "gen_list": [
+      "Pseudorandomness and Derandomization: A Primer",
+      "Randomness, Geometry, and Discrete Structures: Pseudorandomness and Derandomization",
+      "Derandomization: New Directions in Theory and Applications",
+      "Pseudorandomness and the Hardness of Approximation Problems",
+      "Randomness and Derandomization in Computer Science"
+    ]
+  },
+  {
+    "title": "Software and application security: Web application security",
+    "gen_list": [
+      "Web Application Security: A Beginner's Guide",
+      "Secure Coding in C and C++",
+      "OWASP Top 10: Secure Coding Practices",
+      "Web Application Security Architecture",
+      "Secure Web Applications: A Hands-On Approach"
+    ]
+  },
+  {
+    "title": "Network components: Wireless access points, base stations and infrastructure",
+    "gen_list": [
+      "Wireless Network Planning and Optimization",
+      "Mobile Network Infrastructure Design",
+      "Wireless Local Area Networks (WLANs)",
+      "Cellular Network Systems Engineering",
+      "Radio Access Technology for 5G Networks"
+    ]
+  },
+  {
+    "title": "Security services: Privacy-preserving protocols",
+    "gen_list": [
+      "Secure Multi-Party Computation",
+      "Differential Privacy: A Survey of Current Status and Future Directions",
+      "Private Information Retrieval: A Survey",
+      "Homomorphic Encryption: A Survey",
+      "Secure Data Sharing with Homomorphic Encryption"
+    ]
+  },
+  {
+    "title": "Security services: Authorization",
+    "gen_list": [
+      "Authorization, Authentication, and Accounting for Network Access Control",
+      "A Survey of Authorization Schemes for Digital Rights Management",
+      "XACML: eXtensible Access Control Markup Language",
+      "Role-Based Access Control: Concepts and Techniques",
+      "Attribute-Based Access Control: A Survey"
+    ]
+  },
+  {
+    "title": "Education: Learning management systems",
+    "gen_list": [
+      "Designing and Implementing a Learning Management System",
+      "The Impact of Learning Management Systems on Student Engagement",
+      "A Review of Learning Management Systems for Online Education",
+      "Learning Management Systems in Higher Education: A Study of Their Effectiveness",
+      "An Exploratory Study of the Use of Learning Management Systems in K-12 Education"
+    ]
+  },
+  {
+    "title": "Security services: Digital rights management",
+    "gen_list": [
+      "Digital Rights Management: A Survey of Current State and Future Directions",
+      "Security and Privacy in Digital Rights Management Systems",
+      "A Survey on Digital Rights Management for Cloud Computing Services",
+      "Digital Rights Management: A Review of the State-of-the-Art Techniques",
+      "Evolving Threats to Digital Rights Management Systems"
+    ]
+  },
+  {
+    "title": "Cross-computing tools and techniques: Verification",
+    "gen_list": [
+      "Formal Verification of Software and Hardware Systems",
+      "Verification of Hybrid Systems",
+      "Model Checking for Verification",
+      "Automated Verification Methods in Computer Science",
+      "Formal Verification: A Guide to Building Correct Software"
+    ]
+  },
+  {
+    "title": "Electronic design automation: Methodologies for EDA",
+    "gen_list": [
+      "Methodologies for Electronic Design Automation",
+      "The Art of Electronics",
+      "Electronic Design Automation: A Practical Guide",
+      "Principles and Practice of Microelectronics",
+      "Designing Digital Integrated Circuits"
+    ]
+  },
+  {
+    "title": "Computer graphics: Graphics systems and interfaces",
+    "gen_list": [
+      "Graphics, Hardware and Software: The Computer Graphics Handbook",
+      "Computer Graphics: Theory, Techniques, and Applications",
+      "The Art of Computer Graphics",
+      "Computer Graphics: Principles and Practice",
+      "Human-Computer Interaction: Understanding People and Technology"
+    ]
+  },
+  {
+    "title": "Network protocols: Network protocol design",
+    "gen_list": [
+      "TCP/IP Illustrated, Volume 1: The Protocols",
+      "Computer Networks: A Systems Approach",
+      "Network Protocol Implementation and Design for Operating Systems",
+      "Designing Data-Intensive Applications: The Big Data Way",
+      "Protocols for Network Interconnection"
+    ]
+  },
+  {
+    "title": "Models of computation: Interactive computation",
+    "gen_list": [
+      "Theoretical Foundations of the Game-Tree Algorithm",
+      "Interactive Computation and the Theory of Games",
+      "Games, Graphs, and Models of Computation",
+      "Computability and Complexity: A Formal Introduction",
+      "Modeling Computation with Interactive Proofs"
+    ]
+  },
+  {
+    "title": "Mathematical analysis: Calculus",
+    "gen_list": [
+      "Calculus",
+      "Real Analysis",
+      "Introduction to Functional Analysis",
+      "Calculus of Variations and Optimal Control",
+      "Principles of Mathematical Analysis"
+    ]
+  },
+  {
+    "title": "Data management systems: Database management system engines",
+    "gen_list": [
+      "Database Systems: The Complete Book",
+      "Principles of Database Systems",
+      "Database Management Systems: A User's Manual",
+      "Modern Database Systems: A New Era for Data Management and Analytics",
+      "Database Systems: An Introduction to Database Systems"
+    ]
+  },
+  {
+    "title": "Electronic commerce: Online shopping",
+    "gen_list": [
+      "E-Commerce and Digital Payments",
+      "The Impact of E-commerce on Consumer Behavior",
+      "Online Shopping Behavior and Decision Making",
+      "E-commerce and Supply Chain Management",
+      "Digital Marketing Strategies for E-commerce Businesses"
+    ]
+  },
+  {
+    "title": "Law, social and behavioral sciences: Psychology",
+    "gen_list": [
+      "The Selfish Gene",
+      "Thinking, Fast and Slow",
+      "Influence: The Psychology of Persuasion",
+      "The Man Who Mistook His Wife for a Hat",
+      "Sapiens: A Brief History of Humankind"
+    ]
+  },
+  {
+    "title": "World Wide Web: Web searching and information discovery",
+    "gen_list": [
+      "Information Retrieval for the World Wide Web",
+      "Web Search Engines: The Past, Present, and Future",
+      "The Science of Information Retrieval",
+      "Search Engine Optimization (SEO) Essentials",
+      "Information Discovery on the World Wide Web"
+    ]
+  },
+  {
+    "title": "Information retrieval: Retrieval models and ranking",
+    "gen_list": [
+      "The Probabilistic Roadmap",
+      "Latent Semantic Analysis: A New Dimensional Approach to Content Analysis",
+      "Divergence Measure for Document Clustering",
+      "Passage Retrieval Using Inverted Files",
+      "Ranking with a Trustworthiness Score"
+    ]
+  },
+  {
+    "title": "Probability and statistics: Probabilistic representations",
+    "gen_list": [
+      "Introduction to Probability and Statistics",
+      "Probabilistic Representations in Machine Learning",
+      "Probability Theory: A Concise Course",
+      "Statistics: The Science of Data",
+      "Elements of Probability and Statistical Inference"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: Application-specific VLSI designs",
+    "gen_list": [
+      "Design of Digital Systems",
+      "VLSI Design Principles and Practice",
+      "Application-Specific Integrated Circuits (ASICs)",
+      "Digital System Design Using Verilog HDL",
+      "Synthesis of Digital Circuit from Behavioral Description"
+    ]
+  },
+  {
+    "title": "Enterprise computing: Enterprise ontologies, taxonomies and vocabularies",
+    "gen_list": [
+      "Building Ontologies for Information Systems",
+      "Taxonomy and Ontology in Information Systems",
+      "Enterprise Ontologies: A Review of the State of the Art",
+      "Vocabulary Management for Enterprise Ontologies",
+      "Ontology-Based Approach to Enterprise Knowledge Management"
+    ]
+  },
+  {
+    "title": "Document management and text processing: Document searching",
+    "gen_list": [
+      "TextRank: A System for Evaluating Topic Hierarchies",
+      "FROST: A Fast and Robust Text Search Algorithm",
+      "Deep Learning for Information Retrieval: A Survey",
+      "Graph-Based Methods for Document Ranking",
+      "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Sound-based input / output",
+    "gen_list": [
+      "Audio Interfaces for Digital Music Production",
+      "Sound-Based Input Devices for Human-Computer Interaction",
+      "Storage Media for Audio Files",
+      "Analog-to-Digital Conversion in Communication Systems",
+      "Wireless Audio Transmission Technologies"
+    ]
+  },
+  {
+    "title": "Electronic commerce: Secure online transactions",
+    "gen_list": [
+      "Secure Multi-Party Computation for Electronic Commerce",
+      "Payment Card Industry Data Security Standard (PCI DSS)",
+      "A Survey on Secure E-commerce Systems",
+      "Cryptographic Techniques for Secure Online Transactions",
+      "Secure Authentication for Electronic Commerce Systems"
+    ]
+  },
+  {
+    "title": "Collaborative and social computing: Collaborative and social computing devices",
+    "gen_list": [
+      "The Social Life of Information",
+      "Collaborative Systems: Theory and Practice",
+      "Social Computing: A New Paradigm for the Digital Age",
+      "Designing Collaborative Systems: A Guide for Software Engineers",
+      "Social Computing: Concepts, Tools and Applications"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Electro-mechanical devices",
+    "gen_list": [
+      "Electromechanical Devices for Communication Systems",
+      "Interface Technology for Telecommunications",
+      "Storage and Retrieval of Information in Electro-Mechanical Devices",
+      "Electro-Mechanical Switching Devices for Digital Communications",
+      "Mechanical Interfaces for Data Storage and Transmission"
+    ]
+  },
+  {
+    "title": "Logic: Modal and temporal logics",
+    "gen_list": [
+      "Modal Logic",
+      "Temporal Logic",
+      "The Logic of Time",
+      "Modal and Temporal Logic: A Survey",
+      "Handbook of Modal Logic"
+    ]
+  },
+  {
+    "title": "Network protocols: OAM protocols",
+    "gen_list": [
+      "OAM (Operations, Administration, and Maintenance) Protocol",
+      "MPLS OAM: A Survey of Current Status and Future Directions",
+      "A Survey on OAM Protocols for Optical Networks",
+      "OAM in MPLS Networks: Challenges and Opportunities",
+      "OAM-Enabled Networks: A New Paradigm for Network Operations"
+    ]
+  },
+  {
+    "title": "Logic: Proof theory",
+    "gen_list": [
+      "Proof Theory",
+      "The Foundations of Mathematical Logic",
+      "Introduction to Model Theory and Formal Logic",
+      "Proofs and Types: Language and Computation",
+      "Logic for Computer Science"
+    ]
+  },
+  {
+    "title": "Operations research: Marketing",
+    "gen_list": [
+      "Marketing Operations Management",
+      "Operations Research in Marketing and Sales",
+      "Marketing Analytics and Operations Research",
+      "Supply Chain Optimization for Marketing",
+      "Data-Driven Marketing: An Operations Research Approach"
+    ]
+  },
+  {
+    "title": "Database and storage security: Information accountability and usage control",
+    "gen_list": [
+      "Information Accountability in Database Systems",
+      "Usage Control Models for Database Security",
+      "Access Control for Database Systems",
+      "Auditing and Accounting in Database Management",
+      "Security and Auditing of Data Storage Systems"
+    ]
+  },
+  {
+    "title": "Systems security: Firewalls",
+    "gen_list": [
+      "Firewall Fundamentals",
+      "Network Security with OpenBSD",
+      "Computer Networks: A Systems Approach",
+      "Operating System Concepts",
+      "Security and Cryptography Engineering"
+    ]
+  },
+  {
+    "title": "Embedded and cyber-physical systems: Sensor networks",
+    "gen_list": [
+      "Sensor Networks for Embedded Systems",
+      "Cyber-Physical Systems: Design, Modeling, and Control",
+      "Wireless Sensor Networks: A Review on Applications and Challenges",
+      "Embedded Systems with Sensors and Actuators",
+      "Sensor Network Protocols and Algorithms"
+    ]
+  },
+  {
+    "title": "Randomness, geometry and discrete structures: Random network models",
+    "gen_list": [
+      "Random Network Models",
+      "Random Graphs",
+      "Percolation Theory",
+      "Discrete Stochastic Processes",
+      "Scaling and Self-Similarity in Random Networks"
+    ]
+  },
+  {
+    "title": "Accessibility: Accessibility design and evaluation methods",
+    "gen_list": [
+      "Web Content Accessibility Guidelines (WCAG) 2.1",
+      "Universal Design for Learning: Designing Learning Experiences That Work for All Learners",
+      "Accessible and Usable Web Design",
+      "Human-Centered Design for Accessibility",
+      "Evaluating the Accessibility of Websites and Mobile Applications"
+    ]
+  },
+  {
+    "title": "Randomness, geometry and discrete structures: Generating random combinatorial structures",
+    "gen_list": [
+      "Random Combinatorial Structures",
+      "Generating Random Combinatorial Structures",
+      "Randomness and Geometry in Discrete Structures",
+      "Combinatorial Structures: A Randomized Approach",
+      "Randomization of Combinatorial Structures"
+    ]
+  },
+  {
+    "title": "Network protocols: Application layer protocols",
+    "gen_list": [
+      "TCP/IP Illustrated, Volume 1: The Protocols",
+      "Application Layer Protocol Suite for Internet Communications",
+      "The Internet Protocol Suite (TCP/IP)",
+      "HTTP/2: A New Standard for Web Browsing",
+      "DNS and BIND"
+    ]
+  },
+  {
+    "title": "Computing / technology policy: Government technology policy",
+    "gen_list": [
+      "The Digital Economy Act 2010",
+      "Cybersecurity and Infrastructure Security Agency (CISA) Framework",
+      "National Institute of Standards and Technology (NIST) Cybersecurity Framework",
+      "The General Data Protection Regulation (GDPR)",
+      "The European Union's Digital Single Market Strategy"
+    ]
+  },
+  {
+    "title": "Electronic design automation: Timing analysis",
+    "gen_list": [
+      "Timing Analysis in Electronic Design Automation",
+      "Formal Verification of Digital Circuits for Timing and Fault Tolerance",
+      "Timing and Power Optimization Techniques for System-on-Chip Design",
+      "A Survey on Timing Analysis and Synthesis in Electronic Design Automation",
+      "Timing Analysis and Optimization in the Context of 3D Stacked Integrated Circuits"
+    ]
+  },
+  {
+    "title": "Emerging technologies: Quantum technologies",
+    "gen_list": [
+      "Quantum Computing: A Next-Generation Technology",
+      "The Quantum Revolution: Understanding and Harnessing Quantum Technologies",
+      "Quantum Information Science: An Introduction to Quantum Computing, Quantum Cryptography, and Quantum Communication",
+      "Emerging Quantum Technologies: Opportunities and Challenges",
+      "Quantum Technologies for Energy Applications"
+    ]
+  },
+  {
+    "title": "Modeling and simulation: Model development and analysis",
+    "gen_list": [
+      "Model Development and Analysis in Simulation",
+      "Principles of System Modeling, Analysis, and Design",
+      "Simulation-Based Modeling and Analysis for Complex Systems",
+      "Modeling and Simulation: An Introduction to Theory and Practice",
+      "System Dynamics and Control: A Multidisciplinary Approach to Modeling and Analysis"
+    ]
+  },
+  {
+    "title": "Document management and text processing: Document capture",
+    "gen_list": [
+      "Automated Document Capture for Enterprise Content Management",
+      "Document Capture and Processing for Big Data Analytics",
+      "A Survey on Document Image Retrieval and Recognition Systems",
+      "Document Capture and Indexing for Search Engines",
+      "Deep Learning-based Approach for Automatic Document Capture"
+    ]
+  },
+  {
+    "title": "Network types: Ad hoc networks",
+    "gen_list": [
+      "Ad Hoc Networks: Concepts, Technologies and Applications",
+      "Ad Hoc Networking: A Survey of Current Research and Future Directions",
+      "Ad Hoc Wireless Networks: A Review of the State of the Art",
+      "Ad Hoc Networks: Design, Implementation, and Performance Evaluation",
+      "Ad Hoc Mobile Ad Hoc Networks: Challenges and Opportunities"
+    ]
+  },
+  {
+    "title": "Continuous mathematics: Continuous functions",
+    "gen_list": [
+      "Introduction to Real Analysis",
+      "Real and Complex Analysis",
+      "A First Course in Real Analysis",
+      "Real Analysis",
+      "Continuous Functions"
+    ]
+  },
+  {
+    "title": "Emerging technologies: Circuit substrates",
+    "gen_list": [
+      "Graphene-Based Circuit Substrates for Next-Generation Electronics",
+      "Flexible and Stretchable Circuit Substrates for Wearable Devices",
+      "Silicon Carbide-Based Circuit Substrates for High-Temperature Applications",
+      "Metamaterial-Based Circuit Substrates for Electromagnetic Applications",
+      "Heterogeneous Integration of 3D Stacked Circuit Substrates"
+    ]
+  },
+  {
+    "title": "Real-time systems: Real-time languages",
+    "gen_list": [
+      "The Art of Real-Time Programming",
+      "Real-Time Systems and Scheduling",
+      "Real-Time Language Design",
+      "Real-Time Operating Systems: Theory and Practice",
+      "Scheduling in Real-Time Systems"
+    ]
+  },
+  {
+    "title": "Information systems applications: Mobile information processing systems",
+    "gen_list": [
+      "Mobile Information Processing Systems: A Review",
+      "Design and Development of a Mobile Application for Healthcare Services",
+      "The Impact of Mobile Information Systems on Business Productivity",
+      "Mobile Computing: A Survey of Current Trends and Future Directions",
+      "Evaluating the Effectiveness of Mobile Information Systems in Enhancing Customer Experience"
+    ]
+  },
+  {
+    "title": "Formal languages and automata theory: Automata over infinite objects",
+    "gen_list": [
+      "Automata on Infinite Objects",
+      "Automata Theory for Infinite Words",
+      "Infinite Automata: A Survey",
+      "Automata over Infinite Algebras",
+      "The Theory of Infinite Automata"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: External storage",
+    "gen_list": [
+      "External Hard Disk Drives: A Comprehensive Review",
+      "USB Flash Drives: Design, Manufacturing, and Applications",
+      "Solid-State Storage for Mobile Devices",
+      "External Storage Solutions for Data Centers",
+      "Cloud Storage and Its Impact on External Storage Hardware"
+    ]
+  },
+  {
+    "title": "Artificial intelligence: Computer vision",
+    "gen_list": [
+      "Deep Learning for Computer Vision with Python",
+      "Computer Vision: Algorithms and Applications",
+      "Convolutional Neural Networks for Visual Recognition",
+      "Artificial Intelligence for Computer Vision: A Survey",
+      "Image Processing and Computer Vision"
+    ]
+  },
+  {
+    "title": "Network services: Network management",
+    "gen_list": [
+      "Network Management and Control",
+      "Service-Oriented Network Management",
+      "Network Management and Performance Monitoring",
+      "Cloud-Based Network Management Systems",
+      "Service Quality Management in Telecommunications Networks"
+    ]
+  },
+  {
+    "title": "Power and energy: Thermal issues",
+    "gen_list": [
+      "Thermal Management in Power Electronics",
+      "Energy Harvesting from Waste Heat",
+      "Thermal Modeling and Analysis of Electric Vehicles",
+      "Power Electronics and Thermal Issues",
+      "Thermoelectric Materials for Energy Conversion"
+    ]
+  },
+  {
+    "title": "Electronic design automation: Hardware description languages and compilation",
+    "gen_list": [
+      "Hardware Description Languages and Compilation",
+      "The Art of Electronics",
+      "Digital Design and Computer-Aided Design",
+      "VLSI Design: Principles and Practice",
+      "Computer-Aided Design of Integrated Circuits"
+    ]
+  },
+  {
+    "title": "Cross-computing tools and techniques: Measurement",
+    "gen_list": [
+      "A Survey on Cross-Computing Tools and Techniques",
+      "Measurement and Analysis of Cross-Computing Systems",
+      "Cross-Computing: A Study of Measurement and Evaluation Methods",
+      "Measuring Cross-Computing: A Review of Existing Approaches",
+      "Cross-Computing Tool Evaluation: A Comparative Study"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Electronics",
+    "gen_list": [
+      "Electronics: Principles, Devices, and Systems",
+      "Principles of Electronic Materials and Devices",
+      "Modern Electronics: A Practical Approach",
+      "Electronic Circuits and Filters",
+      "Introduction to Electronic Circuits"
+    ]
+  },
+  {
+    "title": "Network protocols: Session protocols",
+    "gen_list": [
+      "Session-Layer Protocols",
+      "TCP/IP Illustrated, Volume 3: TCP for Applications",
+      "The Internet Protocol Cookbook",
+      "Computer Networks: A Systems Approach",
+      "Protocols for Network Interconnection"
+    ]
+  },
+  {
+    "title": "Arts and humanities: Media arts",
+    "gen_list": [
+      "The Art of Video Games",
+      "Film Art: An Introduction",
+      "Media Archaeology: Material Cultures, Consumption, and Nostalgia",
+      "The Cinema Book",
+      "New Media in Culture"
+    ]
+  },
+  {
+    "title": "Education: Distance learning",
+    "gen_list": [
+      "The Effectiveness of Online Learning",
+      "Distance Education: A Review of the Literature",
+      "Blended Learning: A Framework for Integrating Online and Face-to-Face Instruction",
+      "Assessing Student Learning in Online Courses",
+      "E-Learning: The Future of Higher Education"
+    ]
+  },
+  {
+    "title": "Systems security: File system security",
+    "gen_list": [
+      "File System Security: A Survey",
+      "Design and Implementation of a Secure File System",
+      "Security in File Systems: A Review",
+      "A Study on File System Security Measures",
+      "Secure File System Design for Cloud Storage"
+    ]
+  },
+  {
+    "title": "Human computer interaction (HCI): Interactive systems and tools",
+    "gen_list": [
+      "The Psychology of Human-Computer Interaction",
+      "Human-Centered Design: Creating Innovative Products That Redefine User Experience",
+      "Designing Interfaces for Human-Computer Interaction",
+      "Human Factors in Computing Systems",
+      "User Experience (UX) Design: Everything You Need to Know"
+    ]
+  },
+  {
+    "title": "Formal methods and theory of security: Trust frameworks",
+    "gen_list": [
+      "A Formal Approach to Trust Management",
+      "Trust Frameworks for Secure Multi-Party Computation",
+      "Formal Verification of Trust Models",
+      "Theoretical Foundations of Trust and Reputation Systems",
+      "A Mathematical Framework for Trust in Decentralized Networks"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Scanners",
+    "gen_list": [
+      "Scanner Technology and Applications",
+      "Computerized Tomography (CT) Scanner Systems",
+      "Multimodal Imaging: A Review of Medical Imaging Technologies",
+      "Scanning and Imaging in Medical Diagnosis",
+      "Digital Radiography: Principles and Practice"
+    ]
+  },
+  {
+    "title": "Professional topics: Management of computing and information systems",
+    "gen_list": [
+      "Information Systems Management",
+      "Management Information Systems",
+      "Computer Information Systems Management",
+      "Managing Information Systems",
+      "Systems and Information Technology Management"
+    ]
+  },
+  {
+    "title": "Information theory: Coding theory",
+    "gen_list": [
+      "A Introduction to Modern Radio Frequency and Microwave Communication Systems",
+      "Introduction to Information Theory, Inference, and Learning Algorithms",
+      "Elements of Information Theory",
+      "Information Theory: A Survey",
+      "Fundamentals of Convolutional Coding"
+    ]
+  },
+  {
+    "title": "Information storage systems: Record storage systems",
+    "gen_list": [
+      "Record Storage Systems",
+      "Storage and Retrieval of Information",
+      "Information Storage and Retrieval Systems",
+      "Record Management Systems",
+      "Storage and Management of Digital Records"
+    ]
+  },
+  {
+    "title": "Information retrieval: Information retrieval query processing",
+    "gen_list": [
+      "Inverted Files and the File Inversion Technique for Building Multiple Indexes",
+      "Query Optimization Techniques for XML Documents",
+      "Efficient Text Retrieval Systems: Issues, Solutions and Future Directions",
+      "A Study on the Effects of Query Rewriting on Search Results Quality",
+      "Optimizing Full-Text Search Queries Using a Hybrid Approach"
+    ]
+  },
+  {
+    "title": "Enterprise computing: Enterprise modeling",
+    "gen_list": [
+      "Enterprise Modeling and Information Systems",
+      "Business Process Management and Enterprise Modeling",
+      "Enterprise Architecture: From Theory to Practice",
+      "Enterprise Modeling and Business Process Management",
+      "The Enterprise Model: A Framework for Understanding the Organization"
+    ]
+  },
+  {
+    "title": "Law, social and behavioral sciences: Economics",
+    "gen_list": [
+      "Economics of Crime",
+      "Behavioral Economics",
+      "Economic Development",
+      "Social Choice Theory",
+      "Public Finance"
+    ]
+  },
+  {
+    "title": "Probability and statistics: Statistical paradigms",
+    "gen_list": [
+      "The Elements of Statistical Learning",
+      "All of Statistics: A Concise Course in Statistical Inference",
+      "Probability and Statistics for Scientists and Engineers",
+      "Statistical Reasoning in Data Science",
+      "Introduction to Probability and Statistics"
+    ]
+  },
+  {
+    "title": "Design and analysis of algorithms: Concurrent algorithms",
+    "gen_list": [
+      "Introduction to Algorithms",
+      "Algorithms + Data Structures = Programs",
+      "The Art of Computer Programming, Volume 4",
+      "Concurrent and Parallel Computation: An Introduction",
+      "Designing Data-Intensive Applications"
+    ]
+  },
+  {
+    "title": "Machine learning: Learning settings",
+    "gen_list": [
+      "Regularization Methods in Deep Learning",
+      "Batch Normalization: A Fast and Efficient Approach to Normalization",
+      "Dropout: A Simple Way to Prevent Neural Networks from Overfitting",
+      "Early Stopping, Batch Normalization, and Data Augmentation for Deep Learning",
+      "Learning Rate Schedulers for Training Neural Networks"
+    ]
+  },
+  {
+    "title": "Logic: Equational logic and rewriting",
+    "gen_list": [
+      "Equational Logic",
+      "Rewriting Rules for Equational Logic",
+      "The Equational Theory of Terms with Sorts",
+      "A Compendium of Equational Logics",
+      "Rewriting Systems: A Survey"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Printers",
+    "gen_list": [
+      "Printers and Print Technology",
+      "Computer Networking: A Top-Down Approach",
+      "Storage Systems for Digital Data",
+      "Computer Hardware and Software: Interfaces, Networks, and Storage",
+      "Printers and Multifunction Devices"
+    ]
+  },
+  {
+    "title": "Electronic commerce: Online banking",
+    "gen_list": [
+      "E-Commerce and E-Banking: A Study of Consumer Behavior",
+      "The Impact of Online Banking on Financial Inclusion",
+      "Security and Privacy in Electronic Commerce and Online Banking",
+      "An Empirical Analysis of the Adoption of Online Banking Services",
+      "Electronic Commerce and E-Banking: A Review of the Literature"
+    ]
+  },
+  {
+    "title": "Mathematical analysis: Integral equations",
+    "gen_list": [
+      "Linear and Nonlinear Equations of Mathematical Physics",
+      "Integral Equations: Theory and Applications",
+      "Solving Integral Equations by the Method of Variational Approximations",
+      "The Numerical Solution of Integral Equations",
+      "Integral Equations and Their Applications in Physics"
+    ]
+  },
+  {
+    "title": "Cross-computing tools and techniques: Design",
+    "gen_list": [
+      "Cross-Computing Tools and Techniques: Design",
+      "Cross-Computing Tools and Techniques: Implementation",
+      "Cross-Computing Tools and Techniques: Programming Languages",
+      "Cross-Computing Tools and Techniques: Performance Evaluation",
+      "Cross-Computing Tools and Techniques: Case Studies"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Wireless integrated network sensors",
+    "gen_list": [
+      "Wireless Sensor Networks: Technology, Applications, and Future Directions",
+      "Integrated Sensors for Wireless Communication Systems",
+      "Wireless Integrated Network Sensors for Environmental Monitoring",
+      "Communication Hardware, Interfaces, and Storage for Wireless Sensor Networks",
+      "Wireless Sensor Networks: A Review of the State of the Art"
+    ]
+  },
+  {
+    "title": "Machine learning: Machine learning approaches",
+    "gen_list": [
+      "Pattern Recognition and Machine Learning",
+      "Deep Learning",
+      "Machine Learning: A Probabilistic Perspective",
+      "Introduction to Machine Learning with Python",
+      "Pattern Discovery and Data Mining"
+    ]
+  },
+  {
+    "title": "Dependable and fault-tolerant systems and networks: Availability",
+    "gen_list": [
+      "Reliability Engineering Handbook",
+      "Fault-Tolerant Computing: Principles and Practice",
+      "Availability: Concepts, Models, and Methods",
+      "Dependable Systems and Networks: Theory and Applications",
+      "System Availability: Analysis, Design, and Testing"
+    ]
+  },
+  {
+    "title": "Software notations and tools: Software maintenance tools",
+    "gen_list": [
+      "A Survey on Software Maintenance Tools",
+      "Software Maintenance: A Review of Notation and Tool-Based Approaches",
+      "Notation and Tools for Software Maintenance: A Systematic Literature Review",
+      "An Analysis of Software Maintenance Tools Using Software Notation",
+      "Software Maintenance: A Study on the Use of Notations and Tools"
+    ]
+  },
+  {
+    "title": "Dependable and fault-tolerant systems and networks: Redundancy",
+    "gen_list": [
+      "Fault-Tolerant Systems: Design and Analysis",
+      "Redundancy in Computer Networks: A Survey",
+      "Dependability-Centric System Design for Critical Infrastructure",
+      "Fault Tolerance in Distributed Systems",
+      "Reliability and Fault Tolerance in Communication Networks"
+    ]
+  },
+  {
+    "title": "Information systems applications: Multimedia information systems",
+    "gen_list": [
+      "Multimedia Information Systems: A Handbook",
+      "Information Systems Applications in Multimedia",
+      "Multimedia and Hypermedia Systems: Technologies and Applications",
+      "The Handbook of Multimedia Information Systems",
+      "Multimedia Information Systems: Design, Development, and Deployment"
+    ]
+  },
+  {
+    "title": "Hardware test: Board- and system-level test",
+    "gen_list": [
+      "Test-Pattern Generation for Digital Circuit Testing",
+      "Board-Level Test and Fault Isolation Techniques",
+      "System-Level Testing of Embedded Systems",
+      "Fault Injection Testing for Hardware Systems",
+      "Automated Board Test and Validation"
+    ]
+  },
+  {
+    "title": "Communication hardware, interfaces and storage: Sensors and actuators",
+    "gen_list": [
+      "Sensors and Actuators for Internet of Things",
+      "Communication Hardware and Interfaces for IoT Devices",
+      "Storage Solutions for IoT Devices: A Review",
+      "Sensors and Actuators in Industrial Automation",
+      "Interface Technologies for IoT Communication Systems"
+    ]
+  },
+  {
+    "title": "Human computer interaction (HCI): Interaction techniques",
+    "gen_list": [
+      "Interaction Techniques for Human-Computer Interaction",
+      "Designing Interfaces: Patterns for Effective Interaction Design",
+      "The Elements of User Experience: Web and Mobile First",
+      "Human-Centered Design: Creating Products People Love",
+      "Don't Make Me Think!: A Common Sense Approach to Web Usability"
+    ]
+  },
+  {
+    "title": "Computer forensics: Surveillance mechanisms",
+    "gen_list": [
+      "Digital Forensics and Incident Response",
+      "Surveillance-Proof Your Home Network",
+      "The Art of Computer Forensics",
+      "Computer Crime Scene Investigation",
+      "Forensic Computing: An Introduction"
+    ]
+  },
+  {
+    "title": "Discrete mathematics: Graph theory",
+    "gen_list": [
+      "Graph Theory",
+      "Introduction to Graph Theory",
+      "Graphs: Theory and Applications",
+      "Discrete Mathematics with Graph Theory, Combinatorics, and Relational Algebra",
+      "Combinatorial Graph Theory"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Archaeology",
+    "gen_list": [
+      "Archaeometry: An Introduction",
+      "The Oxford Handbook of Engineering and Technology in the Classical World",
+      "Materials Analysis in Archaeology",
+      "Engineering and the Ancient World",
+      "Analytical Methods for Archaeological Materials"
+    ]
+  },
+  {
+    "title": "Cross-computing tools and techniques: Experimentation",
+    "gen_list": [
+      "Cross-Computing Tools and Techniques: Experimentation",
+      "Cross-Computing Tools and Techniques: A Survey",
+      "Cross-Platform Development with C++",
+      "Cross-Compiling for Embedded Systems",
+      "Cross-Compilation of Linux on ARM"
+    ]
+  },
+  {
+    "title": "Intrusion/anomaly detection and malware mitigation: Social engineering attacks",
+    "gen_list": [
+      "Social Engineering in Cyber Warfare",
+      "Anomaly Detection for Malware Mitigation Using Machine Learning Algorithms",
+      "The Anatomy of a Social Engineering Attack",
+      "Intrusion Detection Systems for Social Engineering Attacks",
+      "Malware Detection using Behavioral Analysis and Machine Learning Techniques"
+    ]
+  },
+  {
+    "title": "Dependable and fault-tolerant systems and networks: Maintainability and maintenance",
+    "gen_list": [
+      "Reliability Engineering Handbook",
+      "Fault-Tolerant Computing: Principles and Practice",
+      "Maintainability: A Guide for System Designers",
+      "Designing Reliable Systems: From Fail-Safe to Adaptive Safety",
+      "System Maintenance and Reliability: A Practical Approach"
+    ]
+  },
+  {
+    "title": "Physical sciences and engineering: Earth and atmospheric sciences",
+    "gen_list": [
+      "The Earth: An Intimate History",
+      "Atmospheric Science: An Introduction",
+      "Introduction to Geophysics",
+      "Climate Change: Past, Present and Future",
+      "Soil Mechanics for Practicing Engineers"
+    ]
+  },
+  {
+    "title": "Models of computation: Concurrency",
+    "gen_list": [
+      "Concurrency in Computation Models",
+      "A New Model of Computation for Concurrency",
+      "Concurrent Computation Models: A Survey",
+      "Theoretical Foundations of Concurrent Computation",
+      "Concurrency and Parallelism in Computation Models"
+    ]
+  },
+  {
+    "title": "Systems security: Distributed systems security",
+    "gen_list": [
+      "Distributed Systems Security",
+      "Security in Distributed Systems",
+      "Distributed System Security: A Survey",
+      "Security and Privacy in Distributed Systems",
+      "Distributed System Security: Threats, Vulnerabilities, and Mitigation Strategies"
+    ]
+  },
+  {
+    "title": "Life and medical sciences: Metabolomics / metabonomics",
+    "gen_list": [
+      "Metabonomic Profiling of Human Biological Fluids",
+      "Metabolic Phenotyping in Clinical Trials",
+      "Metabonomic Analysis of Metabolic Disorders",
+      "Systems Biology and Metabolomics: A New Frontier",
+      "Metabonomics for Personalized Medicine"
+    ]
+  },
+  {
+    "title": "Software creation and management: Designing software",
+    "gen_list": [
+      "Designing Software",
+      "Software Engineering: A Practical Approach",
+      "The Elements of Computing Systems",
+      "Head First Design Patterns",
+      "Clean Code: A Handbook of Agile Software Craftsmanship"
+    ]
+  },
+  {
+    "title": "Computers in other domains: Cartography",
+    "gen_list": [
+      "Cartography and Geographic Information Systems for Disaster Response",
+      "Geographic Information Systems (GIS) in Urban Planning",
+      "The Role of Computers in Cartography: A Historical Perspective",
+      "Computers in Cartography: An Introduction to GIS and Remote Sensing",
+      "Cartography and Geospatial Analysis with Python"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: Economics of chip design and manufacturing",
+    "gen_list": [
+      "The Economics of Very Large Scale Integration Design",
+      "Economics of Chip Design and Manufacturing",
+      "Design and Manufacturing of Integrated Circuits: An Economic Analysis",
+      "The Cost of Complexity in Very Large Scale Integration",
+      "Economic Aspects of VLSI Design and Manufacturing"
+    ]
+  },
+  {
+    "title": "Professional topics: Computing industry",
+    "gen_list": [
+      "The Second Computer Science and Statistics Meeting",
+      "Computing: A Discipline of Art, Science, Engineering, and Technology",
+      "The Information Technology Revolution",
+      "Computer Organization and Design",
+      "Introduction to Algorithms"
+    ]
+  },
+  {
+    "title": "Software organization and properties: Software system structures",
+    "gen_list": [
+      "Software Architecture: Patterns, Principles and Practice",
+      "The Structure of Object-Oriented Software Systems",
+      "Software Engineering: A Practical Approach",
+      "Designing Software for Intended Behavior",
+      "Software Architecture: The Hard Way"
+    ]
+  },
+  {
+    "title": "Life and medical sciences: Bioinformatics",
+    "gen_list": [
+      "Bioinformatics: A Practical Approach",
+      "Introduction to Bioinformatics",
+      "Computational Molecular Biology: An Introduction",
+      "Bioinformatics and Computational Biology: Methods and Tools",
+      "Bioinformatics for Biologists: A Practical Guide"
+    ]
+  },
+  {
+    "title": "Embedded and cyber-physical systems: Embedded systems",
+    "gen_list": [
+      "Real-Time Systems: Predictable Software for Reliable Control",
+      "The Art of Electronics",
+      "Digital Integrated Circuits",
+      "Embedded Microcomputer Systems",
+      "Microcontrollers and Embedded Systems"
+    ]
+  },
+  {
+    "title": "Embedded and cyber-physical systems: Sensors and actuators",
+    "gen_list": [
+      "Sensors and Actuators for Embedded Systems",
+      "Cyber-Physical Systems: Design, Modeling, and Control",
+      "Embedded Sensing and Actuation in Cyber-Physical Systems",
+      "Sensors and Actuators for Real-Time Systems",
+      "Design and Implementation of Sensors and Actuators for Cyber-Physical Systems"
+    ]
+  },
+  {
+    "title": "Very large scale integration design: Standard cell libraries",
+    "gen_list": [
+      "Standard Cell Libraries for Very Large Scale Integration Design",
+      "Design and Implementation of Standard Cell Libraries",
+      "Very Large Scale Integration Design Using Standard Cell Libraries",
+      "Standard Cell Library Design for Low Power Applications",
+      "Automated Design of Standard Cell Libraries for VLSI"
+    ]
+  }
+]
