@@ -24,6 +24,3 @@ def convert_to_csv(json_path: str):
     csv_path = json_path.replace(".json", ".csv")
     df.to_csv(csv_path, index=False)
     print(f"Saved CSV to {csv_path}")
-
-json_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.json"
-convert_to_csv(json_path)

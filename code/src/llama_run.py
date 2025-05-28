@@ -1,11 +1,8 @@
 import sys
 sys.path.append('/Users/jerry/.ollama/models')
 from typing import Optional
-import fire
-# import llama.generation as gen
 import ollama
 import json
-import argparse
 import os
 # from bing_search import query_bing_return_mkt
 import pandas as pd
@@ -13,11 +10,11 @@ import logging
 import numpy as np
 import re
 import csv
-import multiprocessing
 from prompts import *
 import time
 import ast
 import re
+from convert_to_csv import convert_to_csv
 
 
 def process_search_query(s):
@@ -67,7 +64,7 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
 
         while attempt < max_retries:
             response = generator.chat(
-                model='llama3.2:3b',
+                model='mistral:7b',
                 messages=dialog,
                 options={
                     "temperature": temperature,
@@ -124,7 +121,7 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
     logging.info("Sending query\n {}".format(dialogs))    
     
     response = generator.chat(
-        model='llama3.2:3b',  # or whichever model you're using in Ollama
+        model='mistral:7b',  # or whichever model you're using in Ollama
         messages=messages,
         options={
             "temperature": temperature,
@@ -163,7 +160,7 @@ def DQ_query_sample(generator, prompt_fn, gen_title, max_gen_len, top_p, tempera
     for _ in range(num_gen):
         try:
             response = generator.chat(
-                model='llama3.2:3b',
+                model='mistral:7b',
                 messages=prompt_text,
                 options={
                     "temperature": temperature,
@@ -203,15 +200,15 @@ def correct_sample_dq(file_path):
     
 def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
     alias = gen_title.replace(" ", "_").replace(":", "").replace("/", "_")
-
     # Construct the question based on the provided format
-    question = f"Who were the authors of the reference {gen_title}? Please, list only the author names, formatted as - AUTHORS: <firstname> <lastname>, separated by commas. Do not mention the reference in the answer."
+    question = f"Who were the authors of the reference {gen_title}? Please, list only the author names, formatted as - AUTHORS: <firstname> <lastname>, separated by commas. Do not mention the reference in the answer. "
 
     model_ans = []
     for j in range(num_gen):
         # Generating the response using the Ollama API (or other model as per your use case)
+        print(question, temperature)
         response = generator.chat(
-            model='llama3.2:3b',  # or whichever model you're using in Ollama
+            model='mistral:7b',  # or whichever model you're using in Ollama
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -345,7 +342,6 @@ def main_IQ(
         if how_many != -1 and counter >= how_many:
             break
         counter += 1
-
         res = IQ_query(generator, num_gen, row["generated_reference"], top_p, temperature, LOG_PATH)
 
         for j in range(num_gen):
@@ -357,10 +353,9 @@ def main_IQ(
             else:
                 df.loc[i, f"IQ_full_ans{j+1}"] = ""
 
-        print(i, "done in method")
-        if i % 20 == 0:
-            df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
-            print(i, "saved")
+        df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
+        print(i, "saved")
+            
     
     df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
  
@@ -388,7 +383,7 @@ def consistency_check_pair(list1,list2,generator):
     list2 = str(list2).strip().replace("<br>", " ")
     prompt = PROMPT.replace("<NAME_LIST1>", list1).replace("<NAME_LIST2>", list2)
     response = generator.chat(
-        model='llama3.2:3b',  # or whichever model you're using in Ollama
+        model='mistral:7b',  # or whichever model you're using in Ollama
         messages=[{"role": "user", "content": prompt}],
         options={
                     "temperature": 0.0,
@@ -415,18 +410,9 @@ def consistency_check(auth_lists,generator):
             frac,ans = consistency_check_pair(auth_lists[i],auth_lists[j],generator)
             records.append(ans)
             fracs.append(frac)
-            # print("auth_lis1",auth_lists[i])
-            # print("auth_lis2",auth_lists[j])
-            # print("frac",frac)
-            # print("ans",ans)
     mean = sum(fracs)/len(fracs)
-    # print(fracs)
-    # print("mean",mean)
-
-    # print("================")
-    # print()
     return mean, records
-    
+
 def main_CC(
     read_path: str,
     LOG_PATH: str,
@@ -515,19 +501,6 @@ def main_Q(
 
     json.dump(res, open(write_json_path, "w"), indent=2, ensure_ascii=False)
 
-def add_bing_return(WRITE_DF_PATH,n_threads=100):
-    df = pd.read_csv(WRITE_DF_PATH)
-    with multiprocessing.Pool(n_threads) as pool:
-        results = pool.starmap(query_bing_return_mkt, [(row["gen_title"],) for i,row in df.iterrows()])
-    print("DONE!!!")
-    print(results[0][0])
-    for i,row in df.iterrows():
-        df.loc[i,"bing_return"] = results[i][0]
-        df.loc[i,"bing_return_results"] = str(results[i][1])
-    df.to_csv(WRITE_DF_PATH,index=False)
-    print(df["bing_return"].value_counts())
-
-
 def main(
     gen_type: str = None,
     temperature: float = 0.0,
@@ -573,28 +546,28 @@ if __name__ == "__main__":
     #     start_index=0,
     #     how_many=-1
     # )
-
-    main(
-        gen_type="IQ",
-        temperature=0.7,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
-        log_path="log.txt",
-        start_index=0,
-        num_gen=5,  # or however many generations you want
-        how_many=-1
+    # convert_to_csv("/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.json")
+    # main(
+    #     gen_type="IQ",
+    #     temperature=0.3,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
+    #     log_path="log.txt",
+    #     start_index=302,
+    #     num_gen=5,  # or however many generations you want
+    #     how_many=-1
+    # )
+    main_DQ(
+       num_gen=10,  # or however many generations you want per prompt
+       temperature=0.0,
+       top_p=0.9,
+       max_seq_len=512,
+       max_gen_len=200,
+       read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",
+       LOG_PATH="log.txt",
+       start_index=0,
+       how_many=-1,
+       dq_type=1
     )
-    # main_DQ(
-    #    num_gen=10,  # or however many generations you want per prompt
-    #    temperature=0.0,
-    #    top_p=0.9,
-    #    max_seq_len=512,
-    #    max_gen_len=200,
-    #    read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",
-    #    LOG_PATH="log.txt",
-    #    start_index=0,
-    #    how_many=-1,
-    #    dq_type=3  # Use 3 for IQ (DQ3)
-    #)
