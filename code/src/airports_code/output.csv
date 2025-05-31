@@ -1,0 +1,3 @@
+title, generated_reference, IQ_1_ans1, IQ_1_ans2, IQ_1_llama_prob, IQ_2_ans1, IQ_2_ans2, IQ_2_llama_prob, IQ_3_ans1, IQ_3_ans2, IQ_3_llama_prob,DQ_ans1,DQ_ans2, DQ_llama_prob
+North America, YYZ, Canada, Canada, 1.0, Toronto Pearson International Airport, Toronto Pearson International Airport, 1.0,North America, North America, 1.0,yes, yes, 1.0
+North America, LAX,United States,United States,1.0,Los Angeles International Airport, Los Angeles International Airport, 1.0,North America,North America, 1.0,yes,yes, 1.0
