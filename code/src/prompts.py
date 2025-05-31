@@ -1,4 +1,4 @@
-prompt_Q = lambda x : [{"role" : "user", "content" : f'List 5 existing references related to "{x}". Just output the titles. Do not mention the authors. Output format should be - <num.>. "<TITLE>".'}]
+prompt_Q = lambda x : [{"role" : "user", "content" : f'List 200 existing airports in "North America". Just output the name of the airports. Output format should be - <num.>. "<AIRPORT>".'}]
 
 prompt_IQ = lambda x : [{"role" : "user", "content" : f"""Who were the authors of the reference, "{x}"? Please list only the author names, formatted as - AUTHORS: <firstname> <lastname>, separated by commas. Do not mention the reference in the answer."""}]
 

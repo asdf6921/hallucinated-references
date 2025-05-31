@@ -534,31 +534,31 @@ def main(
 
 
 if __name__ == "__main__":
-    # main(
-    #     gen_type="Q",
-    #     temperature=0.0,
-    #     top_p=0.9,
-    #     max_seq_len=512,
-    #     max_gen_len=200,
-    #     read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/acm_ccs_200.titles",
-    #     write_json_path="output.json",
-    #     log_path="log.txt",
-    #     start_index=0,
-    #     how_many=-1
-    # )
-    # convert_to_csv("/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.json")
-    # main(
-    #     gen_type="IQ",
-    #     temperature=0.3,
-    #     top_p=0.9,
-    #     max_seq_len=512,
-    #     max_gen_len=200,
-    #     read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
-    #     log_path="log.txt",
-    #     start_index=302,
-    #     num_gen=5,  # or however many generations you want
-    #     how_many=-1
-    # )
+    main(
+        gen_type="Q",
+        temperature=0.0,
+        top_p=0.9,
+        max_seq_len=512,
+        max_gen_len=200,
+        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/acm_ccs_200.titles",
+        write_json_path="output.json",
+        log_path="log.txt",
+        start_index=0,
+        how_many=-1
+    )
+    convert_to_csv("/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.json")
+    main(
+        gen_type="IQ",
+        temperature=0.3,
+        top_p=0.9,
+        max_seq_len=512,
+        max_gen_len=200,
+        read_path="/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
+        log_path="log.txt",
+        start_index=302,
+        num_gen=5,  # or however many generations you want
+        how_many=-1
+    )
     main_DQ(
        num_gen=10,  # or however many generations you want per prompt
        temperature=0.0,
