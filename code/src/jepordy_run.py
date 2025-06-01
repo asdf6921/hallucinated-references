@@ -49,7 +49,7 @@ def reference_query(generator, prompt, concept, answer, top_p, temperature, LOG_
 
         while attempt < max_retries:
             response = generator.chat(
-                model='qwen3:4b', # CHANGE THIS
+                model='llama2:13b', # CHANGE THIS
                 messages=dialog,
                 options={
                     "temperature": temperature,
@@ -314,7 +314,7 @@ def main(
 
 if __name__ == "__main__":
     #change model name:
-    modeln = '_qwen3_4b'
+    modeln = '_llama2_13b'
     main(
         gen_type="Q",
         temperature=0.0,
