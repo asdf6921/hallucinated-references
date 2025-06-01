@@ -2,10 +2,11 @@ import pandas as pd
 import re
 import requests
 import time
+import concurrent.futures
 
 # === CONFIGURATION ===
-csv_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/llama 2 13b res/output.csv"
-start_index = 0  # Change this to resume from a different row
+csv_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/mistral 7b res/output.csv"
+start_index = 211  # Change this to resume from a different row
 checkpoint_every = 10  # Save after every 10 rows
 
 # === Text Normalization ===
@@ -13,6 +14,16 @@ def normalize_text(text):
     text = re.sub(r'<.*?>', '', text)  # Remove tags
     text = re.sub(r'[^a-z\s]', '', text.lower())  # Lowercase and keep letters/spaces only
     return set(text.split())
+
+
+def safe_normalize(text, timeout=2):
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(normalize_text, text)
+        try:
+            return future.result(timeout=timeout)
+        except concurrent.futures.TimeoutError:
+            print("⏳ normalize_text timed out!")
+            return None
 
 # === OpenAlex Query + Grounding Check ===
 def is_grounded_openalex(reference):
