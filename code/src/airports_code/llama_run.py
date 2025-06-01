@@ -28,7 +28,7 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
 
         while attempt < max_retries:
             response = generator.chat(
-                model='mistral:7b', #CHANGE_HERE
+                model='gemma3:4b', #CHANGE_HERE
                 messages=dialog,
                 options={
                     "temperature": temperature,
@@ -85,7 +85,7 @@ def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH, IQ_que
         # Generating the response using the Ollama API (or other model as per your use case)
         print(question, temperature)
         response = generator.chat(
-            model='mistral:7b',  #CHANGE_HERE
+            model='gemma3:4b',  #CHANGE_HERE
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -109,7 +109,7 @@ def DQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
         # Generating the response using the Ollama API (or other model as per your use case)
         print(question, temperature)
         response = generator.chat(
-            model='mistral:7b',  #CHANGE_HERE
+            model='gemma3:4b',  #CHANGE_HERE
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -233,7 +233,7 @@ def consistency_check_airport_name(airport_list,generator):
 
     prompt = PROMPT.replace("<LIST>", str(airport_list))
     response = generator.chat(
-        model='mistral:7b',  #CHANGE_HERE
+        model='gemma3:4b',  #CHANGE_HERE
         messages=[{"role": "user", "content": prompt}],
         options={
                     "temperature": 0.0,
@@ -439,7 +439,7 @@ def main(
 
 
 if __name__ == "__main__":
-    modeln = '_mistral_7b'
+    modeln = '_gemma3_4b'
     main(
         gen_type="Q",
         temperature=0.0,
@@ -447,7 +447,7 @@ if __name__ == "__main__":
         max_seq_len=512,
         max_gen_len=200,
         read_path="/Users/saket/Documents/481/hallucinated-references/code/src/airports_code/acm_ccs_200.titles",  # Change this path to your CSV file
-        write_csv_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json',     # This will be your output CSV
+        write_json_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json',     # This will be your output CSV
         log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log1"+modeln+".txt",
         start_index=0,
         how_many=-1
@@ -495,7 +495,7 @@ if __name__ == "__main__":
         IQ_query_type=3
     )
     main_DQ(
-       num_gen=10,  # or 10
+       num_gen=5,  # or 10
        temperature=0.0,
        top_p=0.9,
        max_seq_len=512,

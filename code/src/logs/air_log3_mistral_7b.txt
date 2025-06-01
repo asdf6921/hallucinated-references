@@ -1,0 +1,3003 @@
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 0.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.3333
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.3333
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.5
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.3333
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.3333
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.667
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.5
+
+title: North America
+fraction_same: 0.5
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.5
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.6667000000000001
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 0.3333
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: North America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.5
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.667
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.5
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.5
+
+title: South America
+fraction_same: 0.5
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.667
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.5
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.6667000000000001
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.3333
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.667
+
+title: South America
+fraction_same: 1.0
+
+title: South America
+fraction_same: 0.0
+
+title: South America
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.5
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.667
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.5
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.0
+
+title: Africa
+fraction_same: 0.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.5
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.5
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.5
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.6667000000000001
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 0.667
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 0.3333
+
+title: Africa
+fraction_same: 1.0
+
+title: Africa
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.0
+
+title: Europe
+fraction_same: 0.33
+
+title: Europe
+fraction_same: 0.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.667
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.83
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.3333
+
+title: Europe
+fraction_same: 0.33
+
+title: Europe
+fraction_same: 0.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.667
+
+title: Europe
+fraction_same: 0.5
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.667
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 0.6667000000000001
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Europe
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 0.5
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 0.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 0.5
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.8332999999999999
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.667
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.3333
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 0.6667000000000001
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+title: Asia
+fraction_same: 1.0
+
+
+Done at Sun Jun  1 04:12:49 2025
+
