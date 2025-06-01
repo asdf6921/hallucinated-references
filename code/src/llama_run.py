@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/jerry/.ollama/models')
+sys.path.append('/Users/saket/.ollama/models')
 from typing import Optional
 import ollama
 import json
@@ -49,7 +49,7 @@ def df_extract_authors(read_path):
         full_ans_col = f"IQ_full_ans{i}"
         ans_col = f"IQ_ans{i}"
         if full_ans_col in df.columns:
-            df[ans_col] = df.apply(lambda x: 
+            df[ans_col] = df.apply(lambda x:
                                    extract_authors_from_ans(x["generated_reference"], x[full_ans_col]), axis=1)
     df.to_csv(read_path, index=False)
 
@@ -104,22 +104,22 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
     return result
 
 def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i=None,all_ans=None):
-    
+
     if i is not None and all_ans is not None:
         assert title in all_ans
         prompt = prompt(all_ans,(i%5)+1)
     else:
         prompt = prompt(title)
-    
+
     alias = title.replace(" ","_").replace(":","").replace("/","_")
 
     logging.basicConfig(filename=LOG_PATH + alias + ".log",filemode='w',level=logging.INFO,format='%(asctime)s %(levelname)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',force=True)
-    logging.info("temperature: " + str(temperature)) 
+    logging.info("temperature: " + str(temperature))
 
     dialogs = [prompt]
 
-    logging.info("Sending query\n {}".format(dialogs))    
-    
+    logging.info("Sending query\n {}".format(dialogs))
+
     response = generator.chat(
         model='mistral:7b',  # or whichever model you're using in Ollama
         messages=messages,
@@ -128,7 +128,7 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
             "top_p": top_p
         }
     )
-    
+
     # Wrap the response like LLaMA would return
     results = {
         'generation': {
@@ -136,7 +136,7 @@ def direct_query(generator,prompt,title,max_gen_len,top_p,temperature,LOG_PATH,i
             'content': response['message']['content']
         }
     }
-    
+
     #there is only one dialog, we are not batching right now
     for dialog, result in zip(dialogs, results):
         for msg in dialog:
@@ -197,7 +197,7 @@ def correct_sample_dq(file_path):
     # df["DQ2_prob_sample"] = df["DQ2_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
     # df["DQ3_prob_sample"] = df["DQ3_ans_sample"].apply(lambda x: return_prob(ast.literal_eval(x)))
     df.to_csv(file_path,index=False)
-    
+
 def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
     alias = gen_title.replace(" ", "_").replace(":", "").replace("/", "_")
     # Construct the question based on the provided format
@@ -221,7 +221,7 @@ def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
         model_ans.append(ans)
 
     return model_ans
-    
+
 def main_DQ(
     num_gen: int = None,
     temperature: float = 0.0,
@@ -235,7 +235,7 @@ def main_DQ(
     dq_type: int = None
 ):
     generator = ollama
-    
+
     df = pd.read_csv(read_path)
     suffix = ""
     if num_gen is not None:
@@ -332,7 +332,7 @@ def main_IQ(
     assert how_many is not None
 
     generator = ollama
-    
+
     df = pd.read_csv(read_path)
 
     counter = 0
@@ -347,7 +347,7 @@ def main_IQ(
         for j in range(num_gen):
             if res[j] is not None:
                 # swap \n with <br> here
-                processed_text = res[j].replace('\n', '<br>')  
+                processed_text = res[j].replace('\n', '<br>')
                 processed_text = re.sub(r"<think>.*?</think>", "", processed_text, flags=re.DOTALL).strip()
                 df.loc[i, f"IQ_full_ans{j+1}"] = processed_text
             else:
@@ -355,10 +355,10 @@ def main_IQ(
 
         df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
         print(i, "saved")
-            
-    
+
+
     df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
- 
+
 def get_agreement_frac(s: str):
     "Extract agreement percentage from string and return it as a float between 0 and 1"
     x = s.strip().upper()
@@ -371,14 +371,14 @@ def get_agreement_frac(s: str):
     m = re.match(r"^[0-9]+\.?[0-9]*", x)
     if not m:
         return 0.0
-    return min(float(m.group(0)) / 100.0, 1.0) 
- 
+    return min(float(m.group(0)) / 100.0, 1.0)
+
 def consistency_check_pair(list1,list2,generator):
     PROMPT = """Below are what should be two lists of authors. On a scale of 0-100%, how much overlap is there in the author names (ignore minor variations such as middle initials or accents)? Answer with a number between 0 and 100. Also, provide a justification. Note: if either of them is not a list of authors, output 0. Output format should be ANS: <ans> JUSTIFICATION: <justification>.
-    
+
     1. <NAME_LIST1>
     2. <NAME_LIST2>"""
-    
+
     list1 = str(list1).strip().replace("<br>", " ")
     list2 = str(list2).strip().replace("<br>", " ")
     prompt = PROMPT.replace("<NAME_LIST1>", list1).replace("<NAME_LIST2>", list2)
@@ -398,7 +398,7 @@ def consistency_check_pair(list1,list2,generator):
         }
     }
     ans = results["generation"]["content"]
-    return (get_agreement_frac(ans), ans)    
+    return (get_agreement_frac(ans), ans)
 
 def consistency_check(auth_lists,generator):
     n = len(auth_lists)
@@ -454,7 +454,7 @@ def main_CC(
 
     df.to_csv(read_path, index=False)
     print(f"Wrote {counter:,} entries to {LOG_PATH} in {time.time() - start:.2f}s")
-        
+
 
 def main_Q(
     temperature: float = 0.0,
@@ -530,7 +530,7 @@ def main(
         main_DQ(num_gen, temperature, top_p, max_seq_len, max_gen_len,
                 read_path, log_path, start_index, how_many, dq_type)
         correct_sample_dq(read_path)
-        
+
 
 
 if __name__ == "__main__":
