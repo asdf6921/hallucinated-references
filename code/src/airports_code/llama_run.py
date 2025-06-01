@@ -28,7 +28,7 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
 
         while attempt < max_retries:
             response = generator.chat(
-                model='mistral:7b',
+                model='mistral:7b', #CHANGE_HERE
                 messages=dialog,
                 options={
                     "temperature": temperature,
@@ -68,7 +68,7 @@ def reference_query(generator, prompt, concept, top_p, temperature, LOG_PATH):
     }
 
     return result
-   
+
 def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH, IQ_query_type):
     # Construct the question based on the provided format
     # question = f"Who were the authors of the reference {gen_title}? Please, list only the author names, formatted as - AUTHORS: <firstname> <lastname>, separated by commas. Do not mention the reference in the answer. "
@@ -85,7 +85,7 @@ def IQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH, IQ_que
         # Generating the response using the Ollama API (or other model as per your use case)
         print(question, temperature)
         response = generator.chat(
-            model='mistral:7b',  # or whichever model you're using in Ollama
+            model='mistral:7b',  #CHANGE_HERE
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -109,7 +109,7 @@ def DQ_query(generator, num_gen, gen_title, top_p, temperature, LOG_PATH):
         # Generating the response using the Ollama API (or other model as per your use case)
         print(question, temperature)
         response = generator.chat(
-            model='mistral:7b',  # or whichever model you're using in Ollama
+            model='mistral:7b',  #CHANGE_HERE
             messages=[{"role": "user", "content": question}],
             options={
                 "temperature": temperature,
@@ -144,7 +144,7 @@ def main_IQ(
     assert IQ_query_type is not None
 
     generator = ollama
-    
+
     df = pd.read_csv(read_path)
 
     counter = 0
@@ -159,7 +159,7 @@ def main_IQ(
         for j in range(num_gen):
             if res[j] is not None:
                 # swap \n with <br> here
-                processed_text = res[j].replace('\n', '<br>')  
+                processed_text = res[j].replace('\n', '<br>')
                 processed_text = re.sub(r"<think>.*?</think>", "", processed_text, flags=re.DOTALL).strip()
                 processed_text = processed_text.replace("- COUNTRY:", "").replace("- AIRPORT:", "").replace("- CONTINENT:", "").replace("COUNTRY:", "").replace("AIRPORT:", "").replace("CONTINENT:", "").strip()
                 df.loc[i, f"IQ_{IQ_query_type}_ans{j+1}"] = processed_text
@@ -168,10 +168,10 @@ def main_IQ(
 
         df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
         print(i, "saved")
-            
-    
+
+
     df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
- 
+
 def main_DQ(
     temperature: float = 0.0,
     num_gen: int = 1,
@@ -187,7 +187,7 @@ def main_DQ(
     assert how_many is not None
 
     generator = ollama
-    
+
     df = pd.read_csv(read_path)
 
     counter = 0
@@ -202,7 +202,7 @@ def main_DQ(
         for j in range(num_gen):
             if res[j] is not None:
                 # swap \n with <br> here
-                processed_text = res[j].replace('\n', '<br>')  
+                processed_text = res[j].replace('\n', '<br>')
                 processed_text = re.sub(r"<think>.*?</think>", "", processed_text, flags=re.DOTALL).strip()
                 df.loc[i, f"DQ_ans{j+1}"] = processed_text
             else:
@@ -210,10 +210,10 @@ def main_DQ(
 
         df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
         print(i, "saved dq stuff")
-            
-    
+
+
     df.to_csv(read_path, index=False, quoting=csv.QUOTE_ALL)
- 
+
 def get_agreement_frac(s: str):
     "Extract agreement percentage from string and return it as a float between 0 and 1"
     x = s.strip().upper()
@@ -226,14 +226,14 @@ def get_agreement_frac(s: str):
     m = re.match(r"^[0-9]+\.?[0-9]*", x)
     if not m:
         return 0.0
-    return min(float(m.group(0)) / 100.0, 1.0) 
+    return min(float(m.group(0)) / 100.0, 1.0)
 
 def consistency_check_airport_name(airport_list,generator):
     PROMPT = """Below is a list of airport names: <LIST>. On a scale of 0-100%, how much overlap is there in the airport names? Ignore minor variations in the name, as long as the airport name is correct. Answer with a number between 0 and 100. Output format should be ANS: <ans>."""
-    
+
     prompt = PROMPT.replace("<LIST>", str(airport_list))
     response = generator.chat(
-        model='mistral:7b',  # or whichever model you're using in Ollama
+        model='mistral:7b',  #CHANGE_HERE
         messages=[{"role": "user", "content": prompt}],
         options={
                     "temperature": 0.0,
@@ -255,29 +255,29 @@ def consistency_check_place(country_list,generator):
     # Convert all strings to lowercase and strip whitespace
     countries = [str(c).lower().strip() for c in country_list]
     print('COUNTRIES IN CHECK WERE: ', str(countries))
-    
+
     # Count occurrences of each country
     country_counts = {}
     for country in countries:
         country_counts[country] = country_counts.get(country, 0) + 1
-    
+
     # Find the maximum number of matches for any country
     max_matches = max(country_counts.values()) if country_counts else 0
-    
+
     # Return fraction based on most frequent country
     return max_matches / len(countries)
 
 def consistency_check_DQ(dq_list,generator):
     print('DQS IN CHECK WERE: ', str(dq_list))
-    
+
     # Count occurrences of each "yes" or "no"
     ans_counts = {}
     for ans in dq_list:
         ans_counts[ans] = ans_counts.get(ans, 0) + 1
-    
+
     # Find the maximum number of matches for any "yes" or "no"
     max_matches = max(ans_counts.values()) if ans_counts else 0
-    
+
     # Return fraction based on most frequent "yes" or "no"
     return max_matches / len(dq_list)
 
@@ -351,7 +351,7 @@ def main_DQ_CC(
         if how_many != -1 and counter >= how_many:
             break
         counter += 1
-        
+
         fraction_same = consistency_check_DQ(
             [row.get(f"DQ_ans{j}") for j in range(1, 11)], # the 3 is the number of generations we do for each DQ query
             generator
@@ -360,7 +360,7 @@ def main_DQ_CC(
         df.loc[i, f"DQ_llama_prob"] = fraction_same
 
     df.to_csv(read_path, index=False)
-        
+
 # this function generates 200 references for each cs topic in acm_ccs_200.titles
 # it writes the results to output.json
 def main_Q(
@@ -439,27 +439,30 @@ def main(
 
 
 if __name__ == "__main__":
+    modeln = '_mistral_7b'
     main(
         gen_type="Q",
         temperature=0.0,
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/acm_ccs_200.titles",
-        write_json_path="output.json",
-        log_path="log.txt",
+        read_path="/Users/saket/Documents/481/hallucinated-references/code/src/airports_code/acm_ccs_200.titles",  # Change this path to your CSV file
+        write_csv_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json',     # This will be your output CSV
+        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log1"+modeln+".txt",
         start_index=0,
         how_many=-1
     )
-    convert_to_csv("/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.json")
+        #     read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/acm_ccs_200.titles",
+        # write_json_path="output.json",
+    convert_to_csv('/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json')
     main(
         gen_type="IQ",
         temperature=0.3,
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
-        log_path="logs/log.txt",
+        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
+        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log2"+modeln+".txt",
         start_index=0,
         num_gen=3,  # or 3
         how_many=-1,
@@ -471,8 +474,8 @@ if __name__ == "__main__":
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.csv",  # make sure this is a CSV
-        log_path="logs/log.txt",
+        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
+        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log3"+modeln+".txt",
         start_index=0,
         num_gen=3,  # or 3
         how_many=-1,
@@ -484,8 +487,8 @@ if __name__ == "__main__":
         top_p=0.9,
         max_seq_len=512,
         max_gen_len=200,
-        read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.csv",
-        log_path="logs/log.txt",
+        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
+        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log4"+modeln+".txt",
         start_index=0,
         num_gen=3,  # or 3
         how_many=-1,
@@ -497,13 +500,13 @@ if __name__ == "__main__":
        top_p=0.9,
        max_seq_len=512,
        max_gen_len=200,
-       read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.csv",
-       LOG_PATH="logs/log.txt",
+       read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
+       LOG_PATH="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log5"+modeln+".txt",
        start_index=0,
        how_many=-1,
     )
     main_DQ_CC(
-        read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/output.csv",
+        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
         start_index=0,
         how_many=-1
     )

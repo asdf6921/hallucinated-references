@@ -10,3 +10,20 @@ prompt_DQ2_sample = lambda x : [{"role": "user", "content" : 'Give a famous refe
 prompt_DQ3_sample = lambda x,y :  [{"role": "user", "content" : f"""A language model generated references related to a research topic with the following titles:
 {x}
 Does the reference with title #{y} exist? Just output yes/no."""}]
+
+# Prompts Jeopordy:
+
+prompt_Q_J = lambda question: [
+    {
+        "role": "user",
+        "content": (
+            f'Answer the following Jeopardy question with only the single word answer. '
+            f'Do not provide any explanation or additional text, just the word answer.\n\n'
+            f'Question: {question}'
+            f'Output format should be - <num.>. "AWNSER".'
+        )
+    }
+]
+
+
+prompt_DQ_J = lambda x, ans : [{"role" : "user", "content" : f"""Is "{ans}" the correct answer to the question "{x}"? Answer either "yes" or "no" and nothing else. Output format should be either 'yes' or 'no' """}]
