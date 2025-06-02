@@ -5,9 +5,9 @@ import time
 import concurrent.futures
 
 # === CONFIGURATION ===
-csv_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/mistral 7b res/output.csv"
-start_index = 211  # Change this to resume from a different row
-checkpoint_every = 10  # Save after every 10 rows
+csv_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/qwen 3 4b/output.csv"
+start_index = 0  # Change this to resume from a different row
+checkpoint_every = 50  # Save after every 10 rows
 
 # === Text Normalization ===
 def normalize_text(text):
@@ -41,7 +41,7 @@ def is_grounded_openalex(reference):
             print(f"🔍 Comparing:\n→ REF:   \"{reference}\"\n→ TITLE: \"{title}\"")
             
             ref_words = normalize_text(reference)
-            title_words = normalize_text(title)
+            title_words = safe_normalize(title)
 
             if ref_words.issubset(title_words) or title_words.issubset(ref_words):
                 return 'G'
