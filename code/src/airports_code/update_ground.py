@@ -1,7 +1,7 @@
 import pandas as pd
 
 # File path
-input_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_llama2_7b.csv"
+input_path = "/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_mistral_7b.csv"
 output_path = input_path  # overwrite the same file
 
 # Load CSV
