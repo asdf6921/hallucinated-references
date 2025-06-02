@@ -267,6 +267,74 @@ def consistency_check_place(country_list,generator):
     # Return fraction based on most frequent country
     return max_matches / len(countries)
 
+def new_consistency_check_airport_name(airport_list,correct_airport_name,generator):
+    PROMPT = """Below is a list of airport names: <LIST>. The correct expected airport name is <CORRECT_AIRPORT_NAME>. Return the number of airport names in the list which are the same as the correct airport name (small variations in hyphens, accents, spelling, etc. are allowed, but the core name should be correct). Return only the number of matches in the list. Output format should be ANS: <ans>."""
+    
+    prompt = PROMPT.replace("<LIST>", str(airport_list)).replace("<CORRECT_AIRPORT_NAME>", correct_airport_name)
+    response = generator.chat(
+        model='mistral:7b',  # or whichever model you're using in Ollama
+        messages=[{"role": "user", "content": prompt}],
+        options={
+                    "temperature": 0.0,
+                    "top_p": 0.95
+                }
+    )
+    # Wrap the response like LLaMA would return
+    results = {
+        'generation': {
+            'role': 'assistant',
+            'content': response['message']['content']
+        }
+    }
+    ans = results["generation"]["content"]
+    cleaned_ans = int(re.search(r'ANS:\s*(\d+)', ans).group(1))
+    return cleaned_ans
+
+
+def new_consistency_check_place(place_list, iata_code, type: 'country' or 'continent'):
+    places = [str(c).lower().strip() for c in place_list]
+    place_counts = {}
+    for place in places:
+        place_counts[place] = place_counts.get(place, 0) + 1
+
+    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv')
+    # Find the row where IATA CODE matches and get the Country Name
+    correct_country = airports_df[airports_df['IATA CODE'] == iata_code]['Country Name'].iloc[0].lower().strip()
+
+    # get correct place from iata_code
+    if type == 'country':
+        if correct_country in place_counts:
+            return place_counts[correct_country] / len(places)
+        else:
+            return 0
+    elif type == 'continent':
+        # get continent from iata_code
+        # Read the continents CSV
+        continents_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/Countries_by_continents.csv')
+        # Find the continent for the correct country
+        correct_continent = continents_df[continents_df['Country'].str.lower().strip() == correct_country]['Continent'].iloc[0].lower().strip()
+        
+        if correct_continent in place_counts:
+            return place_counts[correct_continent] / len(places)
+        else:
+            return 0
+
+def new_consistency_check_DQ(dq_list,iata_code,generator):
+    # Check if IATA code exists in new_airports.csv
+    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv')
+    correct_answer = 'yes' if len(airports_df[airports_df['IATA CODE'] == iata_code]) > 0 else 'no'
+    
+    # Count occurrences of each "yes" or "no"
+    ans_counts = {}
+    for ans in dq_list:
+        ans_counts[ans] = ans_counts.get(ans, 0) + 1
+
+    if correct_answer in ans_counts:
+        return ans_counts[correct_answer] / len(dq_list)
+    else:
+        return 0
+
+
 def consistency_check_DQ(dq_list,generator):
     print('DQS IN CHECK WERE: ', str(dq_list))
 
@@ -280,7 +348,6 @@ def consistency_check_DQ(dq_list,generator):
 
     # Return fraction based on most frequent "yes" or "no"
     return max_matches / len(dq_list)
-
 
 def main_CC(
     read_path: str,
