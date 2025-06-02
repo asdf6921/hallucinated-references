@@ -272,7 +272,7 @@ def new_consistency_check_airport_name(airport_list,correct_airport_name, genera
     
     prompt = PROMPT.replace("<LIST>", str(airport_list)).replace("<CORRECT_AIRPORT_NAME>", correct_airport_name)
     response = generator.chat(
-        model='mistral:7b',  # or whichever model you're using in Ollama
+        model='gemma3:4b',  # or whichever model you're using in Ollama
         messages=[{"role": "user", "content": prompt}],
         options={
                     "temperature": 0.0,
@@ -287,7 +287,11 @@ def new_consistency_check_airport_name(airport_list,correct_airport_name, genera
         }
     }
     ans = results["generation"]["content"]
-    cleaned_ans = int(re.search(r'ANS:\s*(\d+)', ans).group(1))
+    res = re.search(r'ANS:\s*(\d+)', ans)
+    if res is None:
+        cleaned_ans = 0
+    else:
+        cleaned_ans = int(res.group(1))
     return cleaned_ans
 
 
@@ -297,7 +301,7 @@ def new_consistency_check_place(place_list, iata_code, type: 'country' or 'conti
     for place in places:
         place_counts[place] = place_counts.get(place, 0) + 1
 
-    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+    airports_df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
 
     matching_rows = airports_df[airports_df['IATA CODE'] == iata_code]
     if len(matching_rows) == 0:
@@ -316,7 +320,7 @@ def new_consistency_check_place(place_list, iata_code, type: 'country' or 'conti
     elif type == 'continent':
         # get continent from iata_code
         # Read the continents CSV
-        continents_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/Countries_by_continents.csv')
+        continents_df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/airports_code/Countries_by_continents.csv')
 
         matching_continent = continents_df[continents_df['Country'].apply(lambda x: x.lower().strip()) == correct_country]
         if len(matching_continent) == 0:
@@ -333,7 +337,7 @@ def new_consistency_check_place(place_list, iata_code, type: 'country' or 'conti
 
 def new_consistency_check_DQ(dq_list,iata_code):
     # Check if IATA code exists in new_airports.csv
-    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+    airports_df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
     correct_answer = "yes"
     if len(airports_df[airports_df['IATA CODE'].apply(lambda x: x.strip() if isinstance(x, str) else str(x).strip()) == iata_code]) > 0:
         print(f"IATA code {iata_code} exists in new_airports.csv")
@@ -354,13 +358,13 @@ def new_consistency_check_DQ(dq_list,iata_code):
 
 def addNewCCIQ(IQ_query_type):
     # Read the CSV file
-    df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv')
+    df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_gemma3_4b.csv')
     generator = ollama
     
     # Loop through each row
     for index, row in df.iterrows():
         # Get the IATA code
-        iata_code = row[' generated_reference'].strip()
+        iata_code = row['generated_reference'].strip()
         
         # Get all answers for this IQ query type
         ans_columns = [col for col in df.columns if col.startswith(f' IQ_{IQ_query_type}_ans')]
@@ -370,7 +374,7 @@ def addNewCCIQ(IQ_query_type):
         if IQ_query_type in [1, 3]:
             consistency = new_consistency_check_place(answers, iata_code, 'country' if IQ_query_type == 1 else 'continent')
         else:  # IQ_query_type == 2
-            airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+            airports_df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
             correct_airport_name = airports_df[airports_df['IATA CODE'] == iata_code]['Airport Name'].iloc[0].lower().strip()
             consistency = new_consistency_check_airport_name(answers, correct_airport_name, generator)
             
@@ -378,11 +382,11 @@ def addNewCCIQ(IQ_query_type):
         df.at[index, f' IQ_{IQ_query_type}_llama_prob'] = consistency
     
     # Save the updated dataframe back to CSV
-    df.to_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv', index=False)
+    df.to_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_gemma3_4b.csv', index=False)
 
 def addNewCCDQ():
     # Read the CSV file
-    df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv')
+    df = pd.read_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_gemma3_4b.csv')
     
     # Loop through each row
     for index, row in df.iterrows():
@@ -396,7 +400,7 @@ def addNewCCDQ():
         df.at[index, f' DQ_llama_prob'] = consistency
 
     # Save the updated dataframe back to CSV
-    df.to_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv', index=False)
+    df.to_csv('/Users/jerry/Desktop/CSE Capstone/hallucinated-references/code/airports_work/output_gemma3_4b.csv', index=False)
 
 def consistency_check_DQ(dq_list,generator):
     print('DQS IN CHECK WERE: ', str(dq_list))
