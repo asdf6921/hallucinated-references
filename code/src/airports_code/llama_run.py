@@ -267,7 +267,7 @@ def consistency_check_place(country_list,generator):
     # Return fraction based on most frequent country
     return max_matches / len(countries)
 
-def new_consistency_check_airport_name(airport_list,correct_airport_name,generator):
+def new_consistency_check_airport_name(airport_list,correct_airport_name, generator):
     PROMPT = """Below is a list of airport names: <LIST>. The correct expected airport name is <CORRECT_AIRPORT_NAME>. Return the number of airport names in the list which are the same as the correct airport name (small variations in hyphens, accents, spelling, etc. are allowed, but the core name should be correct). Return only the number of matches in the list. Output format should be ANS: <ans>."""
     
     prompt = PROMPT.replace("<LIST>", str(airport_list)).replace("<CORRECT_AIRPORT_NAME>", correct_airport_name)
@@ -297,9 +297,15 @@ def new_consistency_check_place(place_list, iata_code, type: 'country' or 'conti
     for place in places:
         place_counts[place] = place_counts.get(place, 0) + 1
 
-    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv')
+    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+
+    matching_rows = airports_df[airports_df['IATA CODE'] == iata_code]
+    if len(matching_rows) == 0:
+        print(f"Warning: IATA code {iata_code} not found in airports database")
+        return 0
+
     # Find the row where IATA CODE matches and get the Country Name
-    correct_country = airports_df[airports_df['IATA CODE'] == iata_code]['Country Name'].iloc[0].lower().strip()
+    correct_country = matching_rows['Country Name'].iloc[0].lower().strip()
 
     # get correct place from iata_code
     if type == 'country':
@@ -311,18 +317,30 @@ def new_consistency_check_place(place_list, iata_code, type: 'country' or 'conti
         # get continent from iata_code
         # Read the continents CSV
         continents_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/Countries_by_continents.csv')
+
+        matching_continent = continents_df[continents_df['Country'].apply(lambda x: x.lower().strip()) == correct_country]
+        if len(matching_continent) == 0:
+            print(f"Warning: Country {correct_country} not found in continents database")
+            return 0
+
         # Find the continent for the correct country
-        correct_continent = continents_df[continents_df['Country'].str.lower().strip() == correct_country]['Continent'].iloc[0].lower().strip()
+        correct_continent = matching_continent['Continent'].iloc[0].lower().strip()
         
         if correct_continent in place_counts:
             return place_counts[correct_continent] / len(places)
         else:
             return 0
 
-def new_consistency_check_DQ(dq_list,iata_code,generator):
+def new_consistency_check_DQ(dq_list,iata_code):
     # Check if IATA code exists in new_airports.csv
-    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv')
-    correct_answer = 'yes' if len(airports_df[airports_df['IATA CODE'] == iata_code]) > 0 else 'no'
+    airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+    correct_answer = "yes"
+    if len(airports_df[airports_df['IATA CODE'].apply(lambda x: x.strip() if isinstance(x, str) else str(x).strip()) == iata_code]) > 0:
+        print(f"IATA code {iata_code} exists in new_airports.csv")
+        correct_answer = "yes"
+    else:
+        print(f"IATA code {iata_code} does not exist in new_airports.csv")
+        correct_answer = "no"
     
     # Count occurrences of each "yes" or "no"
     ans_counts = {}
@@ -334,6 +352,51 @@ def new_consistency_check_DQ(dq_list,iata_code,generator):
     else:
         return 0
 
+def addNewCCIQ(IQ_query_type):
+    # Read the CSV file
+    df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv')
+    generator = ollama
+    
+    # Loop through each row
+    for index, row in df.iterrows():
+        # Get the IATA code
+        iata_code = row[' generated_reference'].strip()
+        
+        # Get all answers for this IQ query type
+        ans_columns = [col for col in df.columns if col.startswith(f' IQ_{IQ_query_type}_ans')]
+        answers = [str(row[col]).lower().strip() for col in ans_columns]
+        consistency = 0
+        # Calculate consistency based on query type
+        if IQ_query_type in [1, 3]:
+            consistency = new_consistency_check_place(answers, iata_code, 'country' if IQ_query_type == 1 else 'continent')
+        else:  # IQ_query_type == 2
+            airports_df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+            correct_airport_name = airports_df[airports_df['IATA CODE'] == iata_code]['Airport Name'].iloc[0].lower().strip()
+            consistency = new_consistency_check_airport_name(answers, correct_airport_name, generator)
+            
+        # Update the probability column
+        df.at[index, f' IQ_{IQ_query_type}_llama_prob'] = consistency
+    
+    # Save the updated dataframe back to CSV
+    df.to_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv', index=False)
+
+def addNewCCDQ():
+    # Read the CSV file
+    df = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv')
+    
+    # Loop through each row
+    for index, row in df.iterrows():
+        # Get the IATA code
+        iata_code = row[' generated_reference'].strip()
+        # Get all answers for this DQ query
+        ans_columns = [col for col in df.columns if col.startswith(f'DQ_ans')]
+        answers = [str(row[col]).lower().strip() for col in ans_columns]
+        consistency = new_consistency_check_DQ(answers, iata_code)
+        # Update the probability column
+        df.at[index, f' DQ_llama_prob'] = consistency
+
+    # Save the updated dataframe back to CSV
+    df.to_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/output.csv', index=False)
 
 def consistency_check_DQ(dq_list,generator):
     print('DQS IN CHECK WERE: ', str(dq_list))
@@ -506,74 +569,80 @@ def main(
 
 
 if __name__ == "__main__":
-    modeln = '_gemma3_4b'
-    main(
-        gen_type="Q",
-        temperature=0.0,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path="/Users/saket/Documents/481/hallucinated-references/code/src/airports_code/acm_ccs_200.titles",  # Change this path to your CSV file
-        write_json_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json',     # This will be your output CSV
-        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log1"+modeln+".txt",
-        start_index=0,
-        how_many=-1
-    )
-        #     read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/acm_ccs_200.titles",
-        # write_json_path="output.json",
-    convert_to_csv('/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json')
-    main(
-        gen_type="IQ",
-        temperature=0.3,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
-        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log2"+modeln+".txt",
-        start_index=0,
-        num_gen=3,  # or 3
-        how_many=-1,
-        IQ_query_type=1
-    )
-    main(
-        gen_type="IQ",
-        temperature=0.3,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
-        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log3"+modeln+".txt",
-        start_index=0,
-        num_gen=3,  # or 3
-        how_many=-1,
-        IQ_query_type=2
-    )
-    main(
-        gen_type="IQ",
-        temperature=0.3,
-        top_p=0.9,
-        max_seq_len=512,
-        max_gen_len=200,
-        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
-        log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log4"+modeln+".txt",
-        start_index=0,
-        num_gen=3,  # or 3
-        how_many=-1,
-        IQ_query_type=3
-    )
-    main_DQ(
-       num_gen=5,  # or 10
-       temperature=0.0,
-       top_p=0.9,
-       max_seq_len=512,
-       max_gen_len=200,
-       read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
-       LOG_PATH="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log5"+modeln+".txt",
-       start_index=0,
-       how_many=-1,
-    )
-    main_DQ_CC(
-        read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
-        start_index=0,
-        how_many=-1
-    )
+    # modeln = '_gemma3_4b'
+    # main(
+    #     gen_type="Q",
+    #     temperature=0.0,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path="/Users/saket/Documents/481/hallucinated-references/code/src/airports_code/acm_ccs_200.titles",  # Change this path to your CSV file
+    #     write_json_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json',     # This will be your output CSV
+    #     log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log1"+modeln+".txt",
+    #     start_index=0,
+    #     how_many=-1
+    # )
+    #     #     read_path="/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/acm_ccs_200.titles",
+    #     # write_json_path="output.json",
+    # convert_to_csv('/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.json')
+    # main(
+    #     gen_type="IQ",
+    #     temperature=0.3,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
+    #     log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log2"+modeln+".txt",
+    #     start_index=0,
+    #     num_gen=3,  # or 3
+    #     how_many=-1,
+    #     IQ_query_type=1
+    # )
+    # main(
+    #     gen_type="IQ",
+    #     temperature=0.3,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',  # make sure this is a CSV
+    #     log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log3"+modeln+".txt",
+    #     start_index=0,
+    #     num_gen=3,  # or 3
+    #     how_many=-1,
+    #     IQ_query_type=2
+    # )
+    # main(
+    #     gen_type="IQ",
+    #     temperature=0.3,
+    #     top_p=0.9,
+    #     max_seq_len=512,
+    #     max_gen_len=200,
+    #     read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
+    #     log_path="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log4"+modeln+".txt",
+    #     start_index=0,
+    #     num_gen=3,  # or 3
+    #     how_many=-1,
+    #     IQ_query_type=3
+    # )
+    # main_DQ(
+    #    num_gen=5,  # or 10
+    #    temperature=0.0,
+    #    top_p=0.9,
+    #    max_seq_len=512,
+    #    max_gen_len=200,
+    #    read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
+    #    LOG_PATH="/Users/saket/Documents/481/hallucinated-references/code/src/logs/air_log5"+modeln+".txt",
+    #    start_index=0,
+    #    how_many=-1,
+    # )
+    # main_DQ_CC(
+    #     read_path='/Users/saket/Documents/481/hallucinated-references/code/airports_work/output'+ modeln + '.csv',
+    #     start_index=0,
+    #     how_many=-1
+    # )
+    # df2 = pd.read_csv('/Users/medhagupta/Documents/GitHub/hallucinated-references/code/src/airports_code/new_airports.csv', encoding='latin1')
+    # print(df2.columns)
+    addNewCCIQ(1)
+    addNewCCIQ(2)
+    addNewCCIQ(3)
+    addNewCCDQ()
