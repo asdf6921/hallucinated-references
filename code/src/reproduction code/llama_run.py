@@ -560,7 +560,7 @@ if __name__ == "__main__":
     #     how_many=-1
     # )
     main_DQ(
-       num_gen=10,  # or however many generations you want per prompt
+       num_gen=3,  # or however many generations you want per prompt
        temperature=0.7,
        top_p=0.9,
        max_seq_len=512,
@@ -569,5 +569,5 @@ if __name__ == "__main__":
        LOG_PATH="log.txt",
        start_index=0,
        how_many=-1,
-       dq_type=1
+       dq_type=3
     )
